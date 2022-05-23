@@ -19,7 +19,12 @@ namespace Proyecto_M3
 
         private void btArchivo_Click(object sender, EventArgs e)
         {
-
+            OpenFileDialog ofdArchivo = new OpenFileDialog();
+            if (ofdArchivo.ShowDialog() == System.Windows.Forms.DialogResult.OK)
+            {
+                MessageBox.Show("Archivo " + ofdArchivo + " abierto.");
+            }
         }
+
     }
 }
