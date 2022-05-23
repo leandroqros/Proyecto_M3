@@ -37,8 +37,8 @@ namespace Proyecto_M3
             this.cbHijo = new System.Windows.Forms.ComboBox();
             this.lbTitulo = new System.Windows.Forms.Label();
             this.lbArchivo = new System.Windows.Forms.Label();
-            this.textBox1 = new System.Windows.Forms.TextBox();
             this.rtbDocSalida = new System.Windows.Forms.RichTextBox();
+            this.rtbArchivo = new System.Windows.Forms.RichTextBox();
             this.SuspendLayout();
             // 
             // btArchivo
@@ -49,6 +49,7 @@ namespace Proyecto_M3
             this.btArchivo.TabIndex = 0;
             this.btArchivo.Text = "...";
             this.btArchivo.UseVisualStyleBackColor = true;
+            this.btArchivo.Click += new System.EventHandler(this.btArchivo_Click);
             // 
             // btLoad
             // 
@@ -111,13 +112,6 @@ namespace Proyecto_M3
             this.lbArchivo.TabIndex = 7;
             this.lbArchivo.Text = "Archivo:";
             // 
-            // textBox1
-            // 
-            this.textBox1.Location = new System.Drawing.Point(222, 112);
-            this.textBox1.Name = "textBox1";
-            this.textBox1.Size = new System.Drawing.Size(207, 20);
-            this.textBox1.TabIndex = 8;
-            // 
             // rtbDocSalida
             // 
             this.rtbDocSalida.Location = new System.Drawing.Point(173, 215);
@@ -126,13 +120,24 @@ namespace Proyecto_M3
             this.rtbDocSalida.TabIndex = 9;
             this.rtbDocSalida.Text = "";
             // 
+            // rtbArchivo
+            // 
+            this.rtbArchivo.ForeColor = System.Drawing.SystemColors.WindowFrame;
+            this.rtbArchivo.Location = new System.Drawing.Point(222, 110);
+            this.rtbArchivo.Name = "rtbArchivo";
+            this.rtbArchivo.ReadOnly = true;
+            this.rtbArchivo.Size = new System.Drawing.Size(207, 23);
+            this.rtbArchivo.TabIndex = 10;
+            this.rtbArchivo.Text = "C:";
+            this.rtbArchivo.TextChanged += new System.EventHandler(this.rtbArchivo_TextChanged);
+            // 
             // formularioMain
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(800, 450);
+            this.Controls.Add(this.rtbArchivo);
             this.Controls.Add(this.rtbDocSalida);
-            this.Controls.Add(this.textBox1);
             this.Controls.Add(this.lbArchivo);
             this.Controls.Add(this.lbTitulo);
             this.Controls.Add(this.cbHijo);
@@ -158,8 +163,8 @@ namespace Proyecto_M3
         private System.Windows.Forms.ComboBox cbHijo;
         private System.Windows.Forms.Label lbTitulo;
         private System.Windows.Forms.Label lbArchivo;
-        private System.Windows.Forms.TextBox textBox1;
         private System.Windows.Forms.RichTextBox rtbDocSalida;
+        private System.Windows.Forms.RichTextBox rtbArchivo;
     }
 }
 
