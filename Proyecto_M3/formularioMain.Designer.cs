@@ -74,7 +74,7 @@ namespace Proyecto_M3
             this.btAgregar.Name = "btAgregar";
             this.btAgregar.Size = new System.Drawing.Size(156, 23);
             this.btAgregar.TabIndex = 3;
-            this.btAgregar.Text = "Agergar";
+            this.btAgregar.Text = "Agregar";
             this.btAgregar.UseVisualStyleBackColor = true;
             // 
             // cbPadre
