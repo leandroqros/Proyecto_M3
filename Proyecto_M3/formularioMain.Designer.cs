@@ -38,7 +38,7 @@ namespace Proyecto_M3
             this.lbTitulo = new System.Windows.Forms.Label();
             this.lbArchivo = new System.Windows.Forms.Label();
             this.rtbDocSalida = new System.Windows.Forms.RichTextBox();
-            this.rtbArchivo = new System.Windows.Forms.RichTextBox();
+            this.txtArchivo = new System.Windows.Forms.TextBox();
             this.SuspendLayout();
             // 
             // btArchivo
@@ -121,25 +121,20 @@ namespace Proyecto_M3
             this.rtbDocSalida.TabIndex = 9;
             this.rtbDocSalida.Text = "";
             // 
-            // rtbArchivo
+            // txtArchivo
             // 
-            this.rtbArchivo.BackColor = System.Drawing.Color.White;
-            this.rtbArchivo.Enabled = false;
-            this.rtbArchivo.ForeColor = System.Drawing.SystemColors.WindowFrame;
-            this.rtbArchivo.Location = new System.Drawing.Point(222, 108);
-            this.rtbArchivo.Name = "rtbArchivo";
-            this.rtbArchivo.ReadOnly = true;
-            this.rtbArchivo.Size = new System.Drawing.Size(207, 23);
-            this.rtbArchivo.TabIndex = 10;
-            this.rtbArchivo.Text = "C:";
-            this.rtbArchivo.TextChanged += new System.EventHandler(this.rtbArchivo_TextChanged);
+            this.txtArchivo.Enabled = false;
+            this.txtArchivo.Location = new System.Drawing.Point(222, 111);
+            this.txtArchivo.Name = "txtArchivo";
+            this.txtArchivo.Size = new System.Drawing.Size(207, 20);
+            this.txtArchivo.TabIndex = 10;
             // 
             // formularioMain
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(800, 450);
-            this.Controls.Add(this.rtbArchivo);
+            this.Controls.Add(this.txtArchivo);
             this.Controls.Add(this.rtbDocSalida);
             this.Controls.Add(this.lbArchivo);
             this.Controls.Add(this.lbTitulo);
@@ -167,7 +162,7 @@ namespace Proyecto_M3
         private System.Windows.Forms.Label lbTitulo;
         private System.Windows.Forms.Label lbArchivo;
         private System.Windows.Forms.RichTextBox rtbDocSalida;
-        private System.Windows.Forms.RichTextBox rtbArchivo;
+        private System.Windows.Forms.TextBox txtArchivo;
     }
 }
 

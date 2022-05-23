@@ -19,6 +19,7 @@ namespace Proyecto_M3
 
         private void btArchivo_Click(object sender, EventArgs e)
         {
+            string ruta;
             using (OpenFileDialog ofdArchivo = new OpenFileDialog())
             {
                 ofdArchivo.InitialDirectory = "C:\\";
@@ -27,13 +28,15 @@ namespace Proyecto_M3
                 if (ofdArchivo.ShowDialog() == System.Windows.Forms.DialogResult.OK)
                 {
                     MessageBox.Show("Archivo " + ofdArchivo.FileName + " abierto.");
-                } 
+                }
+                ruta = ofdArchivo.FileName;
             }
+            txtArchivo.Text = ruta;
         }
 
         public void rtbArchivo_TextChanged(object sender, EventArgs e)
         {
-            
+            //rtbArchivo.Text = ofdArchivo.Filename;
         }
     }
 }
