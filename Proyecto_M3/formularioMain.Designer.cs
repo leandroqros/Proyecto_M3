@@ -43,9 +43,9 @@ namespace Proyecto_M3
             // 
             // btArchivo
             // 
-            this.btArchivo.Location = new System.Drawing.Point(448, 110);
+            this.btArchivo.Location = new System.Drawing.Point(448, 108);
             this.btArchivo.Name = "btArchivo";
-            this.btArchivo.Size = new System.Drawing.Size(75, 23);
+            this.btArchivo.Size = new System.Drawing.Size(46, 23);
             this.btArchivo.TabIndex = 0;
             this.btArchivo.Text = "...";
             this.btArchivo.UseVisualStyleBackColor = true;
@@ -53,16 +53,16 @@ namespace Proyecto_M3
             // 
             // btLoad
             // 
-            this.btLoad.Location = new System.Drawing.Point(529, 110);
+            this.btLoad.Location = new System.Drawing.Point(500, 108);
             this.btLoad.Name = "btLoad";
-            this.btLoad.Size = new System.Drawing.Size(75, 23);
+            this.btLoad.Size = new System.Drawing.Size(104, 23);
             this.btLoad.TabIndex = 1;
             this.btLoad.Text = "Cargar";
             this.btLoad.UseVisualStyleBackColor = true;
             // 
             // btBuscar
             // 
-            this.btBuscar.Location = new System.Drawing.Point(448, 139);
+            this.btBuscar.Location = new System.Drawing.Point(448, 138);
             this.btBuscar.Name = "btBuscar";
             this.btBuscar.Size = new System.Drawing.Size(156, 23);
             this.btBuscar.TabIndex = 2;
@@ -81,7 +81,7 @@ namespace Proyecto_M3
             // cbPadre
             // 
             this.cbPadre.FormattingEnabled = true;
-            this.cbPadre.Location = new System.Drawing.Point(173, 139);
+            this.cbPadre.Location = new System.Drawing.Point(173, 140);
             this.cbPadre.Name = "cbPadre";
             this.cbPadre.Size = new System.Drawing.Size(121, 21);
             this.cbPadre.TabIndex = 4;
@@ -89,7 +89,7 @@ namespace Proyecto_M3
             // cbHijo
             // 
             this.cbHijo.FormattingEnabled = true;
-            this.cbHijo.Location = new System.Drawing.Point(308, 141);
+            this.cbHijo.Location = new System.Drawing.Point(308, 140);
             this.cbHijo.Name = "cbHijo";
             this.cbHijo.Size = new System.Drawing.Size(121, 21);
             this.cbHijo.TabIndex = 5;
@@ -97,16 +97,17 @@ namespace Proyecto_M3
             // lbTitulo
             // 
             this.lbTitulo.AutoSize = true;
-            this.lbTitulo.Location = new System.Drawing.Point(153, 59);
+            this.lbTitulo.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lbTitulo.Location = new System.Drawing.Point(175, 64);
             this.lbTitulo.Name = "lbTitulo";
-            this.lbTitulo.Size = new System.Drawing.Size(93, 13);
+            this.lbTitulo.Size = new System.Drawing.Size(119, 16);
             this.lbTitulo.TabIndex = 6;
             this.lbTitulo.Text = "Solidarity At Home";
             // 
             // lbArchivo
             // 
             this.lbArchivo.AutoSize = true;
-            this.lbArchivo.Location = new System.Drawing.Point(170, 115);
+            this.lbArchivo.Location = new System.Drawing.Point(170, 113);
             this.lbArchivo.Name = "lbArchivo";
             this.lbArchivo.Size = new System.Drawing.Size(46, 13);
             this.lbArchivo.TabIndex = 7;
@@ -122,8 +123,10 @@ namespace Proyecto_M3
             // 
             // rtbArchivo
             // 
+            this.rtbArchivo.BackColor = System.Drawing.Color.White;
+            this.rtbArchivo.Enabled = false;
             this.rtbArchivo.ForeColor = System.Drawing.SystemColors.WindowFrame;
-            this.rtbArchivo.Location = new System.Drawing.Point(222, 110);
+            this.rtbArchivo.Location = new System.Drawing.Point(222, 108);
             this.rtbArchivo.Name = "rtbArchivo";
             this.rtbArchivo.ReadOnly = true;
             this.rtbArchivo.Size = new System.Drawing.Size(207, 23);

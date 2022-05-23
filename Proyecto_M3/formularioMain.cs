@@ -17,12 +17,17 @@ namespace Proyecto_M3
             InitializeComponent();
         }
 
-        public void btArchivo_Click(object sender, EventArgs e)
+        private void btArchivo_Click(object sender, EventArgs e)
         {
-            OpenFileDialog ofdArchivo = new OpenFileDialog();
-            if (ofdArchivo.ShowDialog() == System.Windows.Forms.DialogResult.OK)
+            using (OpenFileDialog ofdArchivo = new OpenFileDialog())
             {
-                MessageBox.Show("Archivo " + ofdArchivo + " abierto.");
+                ofdArchivo.InitialDirectory = "C:\\";
+                ofdArchivo.Filter = "xml files (*.xml)|*.xml";
+
+                if (ofdArchivo.ShowDialog() == System.Windows.Forms.DialogResult.OK)
+                {
+                    MessageBox.Show("Archivo " + ofdArchivo.FileName + " abierto.");
+                } 
             }
         }
 
