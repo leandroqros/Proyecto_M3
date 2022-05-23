@@ -49,6 +49,7 @@ namespace Proyecto_M3
             this.btArchivo.TabIndex = 0;
             this.btArchivo.Text = "...";
             this.btArchivo.UseVisualStyleBackColor = true;
+            this.btArchivo.Click += new System.EventHandler(this.btArchivo_Click);
             // 
             // btLoad
             // 

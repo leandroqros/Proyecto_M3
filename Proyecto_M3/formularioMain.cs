@@ -16,5 +16,10 @@ namespace Proyecto_M3
         {
             InitializeComponent();
         }
+
+        private void btArchivo_Click(object sender, EventArgs e)
+        {
+
+        }
     }
 }
