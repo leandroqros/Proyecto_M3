@@ -17,7 +17,7 @@ namespace Proyecto_M3
             InitializeComponent();
         }
 
-        private void btArchivo_Click(object sender, EventArgs e)
+        public void btArchivo_Click(object sender, EventArgs e)
         {
             OpenFileDialog ofdArchivo = new OpenFileDialog();
             if (ofdArchivo.ShowDialog() == System.Windows.Forms.DialogResult.OK)
@@ -26,5 +26,9 @@ namespace Proyecto_M3
             }
         }
 
+        public void rtbArchivo_TextChanged(object sender, EventArgs e)
+        {
+            
+        }
     }
 }

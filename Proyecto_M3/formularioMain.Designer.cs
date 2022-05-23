@@ -122,11 +122,14 @@ namespace Proyecto_M3
             // 
             // rtbArchivo
             // 
+            this.rtbArchivo.ForeColor = System.Drawing.SystemColors.WindowFrame;
             this.rtbArchivo.Location = new System.Drawing.Point(222, 110);
             this.rtbArchivo.Name = "rtbArchivo";
+            this.rtbArchivo.ReadOnly = true;
             this.rtbArchivo.Size = new System.Drawing.Size(207, 23);
             this.rtbArchivo.TabIndex = 10;
-            this.rtbArchivo.Text = "";
+            this.rtbArchivo.Text = "C:";
+            this.rtbArchivo.TextChanged += new System.EventHandler(this.rtbArchivo_TextChanged);
             // 
             // formularioMain
             // 
