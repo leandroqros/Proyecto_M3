@@ -43,7 +43,7 @@ namespace Proyecto_M3
             // 
             // btArchivo
             // 
-            this.btArchivo.Location = new System.Drawing.Point(322, 75);
+            this.btArchivo.Location = new System.Drawing.Point(448, 110);
             this.btArchivo.Name = "btArchivo";
             this.btArchivo.Size = new System.Drawing.Size(75, 23);
             this.btArchivo.TabIndex = 0;
@@ -52,7 +52,7 @@ namespace Proyecto_M3
             // 
             // btLoad
             // 
-            this.btLoad.Location = new System.Drawing.Point(403, 75);
+            this.btLoad.Location = new System.Drawing.Point(529, 110);
             this.btLoad.Name = "btLoad";
             this.btLoad.Size = new System.Drawing.Size(75, 23);
             this.btLoad.TabIndex = 1;
@@ -61,7 +61,7 @@ namespace Proyecto_M3
             // 
             // btBuscar
             // 
-            this.btBuscar.Location = new System.Drawing.Point(322, 104);
+            this.btBuscar.Location = new System.Drawing.Point(448, 139);
             this.btBuscar.Name = "btBuscar";
             this.btBuscar.Size = new System.Drawing.Size(156, 23);
             this.btBuscar.TabIndex = 2;
@@ -70,7 +70,7 @@ namespace Proyecto_M3
             // 
             // btAgregar
             // 
-            this.btAgregar.Location = new System.Drawing.Point(322, 133);
+            this.btAgregar.Location = new System.Drawing.Point(448, 168);
             this.btAgregar.Name = "btAgregar";
             this.btAgregar.Size = new System.Drawing.Size(156, 23);
             this.btAgregar.TabIndex = 3;
@@ -80,7 +80,7 @@ namespace Proyecto_M3
             // cbPadre
             // 
             this.cbPadre.FormattingEnabled = true;
-            this.cbPadre.Location = new System.Drawing.Point(47, 104);
+            this.cbPadre.Location = new System.Drawing.Point(173, 139);
             this.cbPadre.Name = "cbPadre";
             this.cbPadre.Size = new System.Drawing.Size(121, 21);
             this.cbPadre.TabIndex = 4;
@@ -88,7 +88,7 @@ namespace Proyecto_M3
             // cbHijo
             // 
             this.cbHijo.FormattingEnabled = true;
-            this.cbHijo.Location = new System.Drawing.Point(182, 106);
+            this.cbHijo.Location = new System.Drawing.Point(308, 141);
             this.cbHijo.Name = "cbHijo";
             this.cbHijo.Size = new System.Drawing.Size(121, 21);
             this.cbHijo.TabIndex = 5;
@@ -96,7 +96,7 @@ namespace Proyecto_M3
             // lbTitulo
             // 
             this.lbTitulo.AutoSize = true;
-            this.lbTitulo.Location = new System.Drawing.Point(27, 24);
+            this.lbTitulo.Location = new System.Drawing.Point(153, 59);
             this.lbTitulo.Name = "lbTitulo";
             this.lbTitulo.Size = new System.Drawing.Size(93, 13);
             this.lbTitulo.TabIndex = 6;
@@ -105,7 +105,7 @@ namespace Proyecto_M3
             // lbArchivo
             // 
             this.lbArchivo.AutoSize = true;
-            this.lbArchivo.Location = new System.Drawing.Point(44, 80);
+            this.lbArchivo.Location = new System.Drawing.Point(170, 115);
             this.lbArchivo.Name = "lbArchivo";
             this.lbArchivo.Size = new System.Drawing.Size(46, 13);
             this.lbArchivo.TabIndex = 7;
@@ -113,14 +113,14 @@ namespace Proyecto_M3
             // 
             // textBox1
             // 
-            this.textBox1.Location = new System.Drawing.Point(96, 77);
+            this.textBox1.Location = new System.Drawing.Point(222, 112);
             this.textBox1.Name = "textBox1";
             this.textBox1.Size = new System.Drawing.Size(207, 20);
             this.textBox1.TabIndex = 8;
             // 
             // rtbDocSalida
             // 
-            this.rtbDocSalida.Location = new System.Drawing.Point(47, 180);
+            this.rtbDocSalida.Location = new System.Drawing.Point(173, 215);
             this.rtbDocSalida.Name = "rtbDocSalida";
             this.rtbDocSalida.Size = new System.Drawing.Size(431, 131);
             this.rtbDocSalida.TabIndex = 9;
