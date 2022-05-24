@@ -29,6 +29,7 @@ namespace Proyecto_M3
         /// </summary>
         private void InitializeComponent()
         {
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(formularioMain));
             this.btArchivo = new System.Windows.Forms.Button();
             this.btCargar = new System.Windows.Forms.Button();
             this.btBuscar = new System.Windows.Forms.Button();
@@ -39,11 +40,13 @@ namespace Proyecto_M3
             this.lbArchivo = new System.Windows.Forms.Label();
             this.rtbDocSalida = new System.Windows.Forms.RichTextBox();
             this.txtArchivo = new System.Windows.Forms.TextBox();
+            this.pbImagen = new System.Windows.Forms.PictureBox();
+            ((System.ComponentModel.ISupportInitialize)(this.pbImagen)).BeginInit();
             this.SuspendLayout();
             // 
             // btArchivo
             // 
-            this.btArchivo.Location = new System.Drawing.Point(597, 133);
+            this.btArchivo.Location = new System.Drawing.Point(597, 158);
             this.btArchivo.Margin = new System.Windows.Forms.Padding(4);
             this.btArchivo.Name = "btArchivo";
             this.btArchivo.Size = new System.Drawing.Size(61, 28);
@@ -54,7 +57,7 @@ namespace Proyecto_M3
             // 
             // btCargar
             // 
-            this.btCargar.Location = new System.Drawing.Point(667, 133);
+            this.btCargar.Location = new System.Drawing.Point(667, 158);
             this.btCargar.Margin = new System.Windows.Forms.Padding(4);
             this.btCargar.Name = "btCargar";
             this.btCargar.Size = new System.Drawing.Size(139, 28);
@@ -64,7 +67,7 @@ namespace Proyecto_M3
             // 
             // btBuscar
             // 
-            this.btBuscar.Location = new System.Drawing.Point(597, 170);
+            this.btBuscar.Location = new System.Drawing.Point(597, 195);
             this.btBuscar.Margin = new System.Windows.Forms.Padding(4);
             this.btBuscar.Name = "btBuscar";
             this.btBuscar.Size = new System.Drawing.Size(208, 28);
@@ -74,7 +77,7 @@ namespace Proyecto_M3
             // 
             // btAgregar
             // 
-            this.btAgregar.Location = new System.Drawing.Point(597, 207);
+            this.btAgregar.Location = new System.Drawing.Point(597, 232);
             this.btAgregar.Margin = new System.Windows.Forms.Padding(4);
             this.btAgregar.Name = "btAgregar";
             this.btAgregar.Size = new System.Drawing.Size(208, 28);
@@ -85,7 +88,7 @@ namespace Proyecto_M3
             // cbPadre
             // 
             this.cbPadre.FormattingEnabled = true;
-            this.cbPadre.Location = new System.Drawing.Point(231, 172);
+            this.cbPadre.Location = new System.Drawing.Point(231, 197);
             this.cbPadre.Margin = new System.Windows.Forms.Padding(4);
             this.cbPadre.Name = "cbPadre";
             this.cbPadre.Size = new System.Drawing.Size(160, 24);
@@ -94,7 +97,7 @@ namespace Proyecto_M3
             // cbHijo
             // 
             this.cbHijo.FormattingEnabled = true;
-            this.cbHijo.Location = new System.Drawing.Point(411, 172);
+            this.cbHijo.Location = new System.Drawing.Point(411, 197);
             this.cbHijo.Margin = new System.Windows.Forms.Padding(4);
             this.cbHijo.Name = "cbHijo";
             this.cbHijo.Size = new System.Drawing.Size(160, 24);
@@ -104,7 +107,7 @@ namespace Proyecto_M3
             // 
             this.lbTitulo.AutoSize = true;
             this.lbTitulo.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lbTitulo.Location = new System.Drawing.Point(233, 79);
+            this.lbTitulo.Location = new System.Drawing.Point(227, 105);
             this.lbTitulo.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.lbTitulo.Name = "lbTitulo";
             this.lbTitulo.Size = new System.Drawing.Size(149, 20);
@@ -114,7 +117,7 @@ namespace Proyecto_M3
             // lbArchivo
             // 
             this.lbArchivo.AutoSize = true;
-            this.lbArchivo.Location = new System.Drawing.Point(227, 139);
+            this.lbArchivo.Location = new System.Drawing.Point(227, 164);
             this.lbArchivo.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.lbArchivo.Name = "lbArchivo";
             this.lbArchivo.Size = new System.Drawing.Size(59, 17);
@@ -123,7 +126,7 @@ namespace Proyecto_M3
             // 
             // rtbDocSalida
             // 
-            this.rtbDocSalida.Location = new System.Drawing.Point(231, 265);
+            this.rtbDocSalida.Location = new System.Drawing.Point(231, 290);
             this.rtbDocSalida.Margin = new System.Windows.Forms.Padding(4);
             this.rtbDocSalida.Name = "rtbDocSalida";
             this.rtbDocSalida.Size = new System.Drawing.Size(573, 160);
@@ -133,18 +136,31 @@ namespace Proyecto_M3
             // txtArchivo
             // 
             this.txtArchivo.Enabled = false;
-            this.txtArchivo.Location = new System.Drawing.Point(296, 137);
+            this.txtArchivo.Location = new System.Drawing.Point(296, 162);
             this.txtArchivo.Margin = new System.Windows.Forms.Padding(4);
             this.txtArchivo.Name = "txtArchivo";
             this.txtArchivo.Size = new System.Drawing.Size(275, 22);
             this.txtArchivo.TabIndex = 10;
             this.txtArchivo.TextChanged += new System.EventHandler(this.txtArchivo_TextChanged);
             // 
+            // pbImagen
+            // 
+            this.pbImagen.Enabled = false;
+            this.pbImagen.Image = ((System.Drawing.Image)(resources.GetObject("pbImagen.Image")));
+            this.pbImagen.Location = new System.Drawing.Point(230, 12);
+            this.pbImagen.Name = "pbImagen";
+            this.pbImagen.Size = new System.Drawing.Size(146, 90);
+            this.pbImagen.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
+            this.pbImagen.TabIndex = 11;
+            this.pbImagen.TabStop = false;
+            this.pbImagen.Click += new System.EventHandler(this.pictureBox1_Click);
+            // 
             // formularioMain
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(1067, 554);
+            this.Controls.Add(this.pbImagen);
             this.Controls.Add(this.txtArchivo);
             this.Controls.Add(this.rtbDocSalida);
             this.Controls.Add(this.lbArchivo);
@@ -158,6 +174,7 @@ namespace Proyecto_M3
             this.Margin = new System.Windows.Forms.Padding(4);
             this.Name = "formularioMain";
             this.Text = "Solidarity At Home - Subtropical";
+            ((System.ComponentModel.ISupportInitialize)(this.pbImagen)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -175,6 +192,7 @@ namespace Proyecto_M3
         private System.Windows.Forms.Label lbArchivo;
         private System.Windows.Forms.RichTextBox rtbDocSalida;
         private System.Windows.Forms.TextBox txtArchivo;
+        private System.Windows.Forms.PictureBox pbImagen;
     }
 }
 
