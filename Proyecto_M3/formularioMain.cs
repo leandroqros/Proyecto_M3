@@ -14,7 +14,6 @@ namespace Proyecto_M3
     public partial class formularioMain : Form
     {
         string nom_arxiu;
-        List<string> mylist = new List<string>();
 
         public formularioMain()
         {
@@ -40,11 +39,6 @@ namespace Proyecto_M3
             nom_arxiu = ruta;
         }
 
-        public void rtbArchivo_TextChanged(object sender, EventArgs e)
-        {
-
-        }
-
         private void txtArchivo_TextChanged(object sender, EventArgs e)
         {
 
@@ -62,17 +56,21 @@ namespace Proyecto_M3
 
         private void btCargar_Click(object sender, EventArgs e)
         {
-            string linia2;
+            List<string> elementos = new List<string>();
+
+            /*string linia;
 
             using (StreamReader sr = new StreamReader(nom_arxiu))
             {
-                linia2 = sr.ReadLine();
+                linia = sr.ReadLine();
 
-            }
-            mylist = GetElementName();
-            for (int i = 0; i < mylist.Count; i++)
+            }*/
+
+            elementos = GetElementName();
+            
+            for (int i = 0; i < elementos.Count; i++)
             {
-                cbPadre.Items.Add(mylist[i]);
+                cbPadre.Items.Add(elementos[i]);
             }
         }
 
@@ -81,10 +79,6 @@ namespace Proyecto_M3
 
         }
 
-        private void formularioMain_Load(object sender, EventArgs e)
-        {
-
-        }
         public string replaceCaracter(string paraula, char original, char fi)
         {
             string bonaparaula;
@@ -100,15 +94,11 @@ namespace Proyecto_M3
 
                 if (caracter != original)
                 {
-
                     bonaparaula += caracter;
-
                 }
                 else
                 {
-
                     bonaparaula += fi;
-
                 }
             }
 
@@ -117,14 +107,12 @@ namespace Proyecto_M3
 
         private List<string> GetElementName()
         {
+            List<string> elementos = new List<string>();
+
             using (StreamReader sr = new StreamReader(nom_arxiu))
             {
                 string linia;
-                char first;
-                char second;
-
-                /*int contador;
-                contador = 1;*/
+                char first, second;
 
                 linia = "  ";
                 first = ' ';
@@ -140,28 +128,15 @@ namespace Proyecto_M3
                         linia = replaceCaracter(linia, '<', ' ');
                         linia = replaceCaracter(linia, '>', ' ');
                         linia = linia.Trim();
-                        mylist.Add(linia);
+                        elementos.Add(linia);
                     }
                     linia = sr.ReadLine();
                 }
 
-                mylist.Remove("SolidarityAtHome");
+                elementos.Remove("SolidarityAtHome");
 
-                return mylist;
-                /*if (contador == 2 && contador == 63 && contador == 120 && contador == 247)
-                    {
-                    linia = sr.ReadLine();
-                    mylist.Add(linia);
-                    contador++;
-                    } else
-                {
-                    contador++;
-                }*/
+                return elementos;
             }
         }
-
     }
 }
-
-
-
