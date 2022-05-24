@@ -30,7 +30,7 @@ namespace Proyecto_M3
 
                 if (ofdArchivo.ShowDialog() == System.Windows.Forms.DialogResult.OK)
                 {
-                    MessageBox.Show("Archivo " + ofdArchivo.FileName + " abierto.");
+                    /*MessageBox.Show("Archivo " + ofdArchivo.FileName + " abierto.");*/
                 }
                 ruta = ofdArchivo.FileName;
             }
@@ -61,14 +61,94 @@ namespace Proyecto_M3
 
         private void btCargar_Click(object sender, EventArgs e)
         {
-            string linia2;
+            List<string> elements = new List<string>();
+
+            elements = GetElementName();
+
+            for(int i = 0; i < elements.Count; i++)
+            {
+                cbPadre.Items.Add(elements[i]);
+            }
+            
+            /*string linia;
 
             using (StreamReader sr = new StreamReader(nom_arxiu))
             {
-                linia2 = sr.ReadLine();
+                for (int i = 0; i < 10; i++)
+                {
+                    linia = sr.ReadLine();
 
-                tbResultat.Text = linia2;
+                    cbPadre.Items.Add(linia);
+                }
+            }*/
+        }
+
+        private void cbPadre_SelectedIndexChanged(object sender, EventArgs e)
+        {
+
+        }
+
+        public string replaceCaracter(string paraula, char original, char fi)
+        {
+            string bonaparaula;
+            int longitud, i;
+            char caracter;
+
+            longitud = paraula.Length;
+
+            bonaparaula = "";
+            for (i = 0; i < longitud; i++)
+            {
+                caracter = paraula[i];
+
+                if (caracter != original)
+                {
+
+                    bonaparaula += caracter;
+
+                }
+                else
+                {
+
+                    bonaparaula += fi;
+
+                }
             }
+
+            return bonaparaula;
+        }
+
+        private List<string> GetElementName()
+        {
+            string linia, nombre;
+            List<string> elements = new List<string>();
+
+            nombre = "";
+            linia = "";
+
+            using (StreamReader sr = new StreamReader(nom_arxiu))
+            {
+                while(linia != null)
+                {
+                    nombre = "";
+
+                    linia = sr.ReadLine();
+                    
+                    if (linia == "<Hosts>" || linia == "<Foods>" || linia == "<Refugees>" || linia == "<FoodsDelivered>")
+                    {
+                        nombre = linia;
+
+                        nombre = replaceCaracter(nombre, '<', ' ');
+
+                        nombre = replaceCaracter(nombre, '>', ' ');
+
+                        nombre.Trim();
+
+                        elements.Add(nombre);
+                    }
+                }
+            }
+            return elements;
         }
     }
 }
