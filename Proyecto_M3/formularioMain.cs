@@ -36,7 +36,7 @@ namespace Proyecto_M3
 
         public void rtbArchivo_TextChanged(object sender, EventArgs e)
         {
-            //rtbArchivo.Text = ofdArchivo.Filename;
+            
         }
 
         private void txtArchivo_TextChanged(object sender, EventArgs e)
