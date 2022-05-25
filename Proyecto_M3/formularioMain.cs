@@ -36,6 +36,9 @@ namespace Proyecto_M3
                 if (ofdArchivo.ShowDialog() == System.Windows.Forms.DialogResult.OK)
                 {
                     /*MessageBox.Show("Archivo " + ofdArchivo.FileName + " abierto.");*/
+                } else
+                {
+                    MessageBox.Show("Archivo no encontrado.");
                 }
                 ruta = ofdArchivo.FileName;
             }
