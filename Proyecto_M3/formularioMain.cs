@@ -282,5 +282,15 @@ namespace Proyecto_M3
         {
 
         }
+
+        private void inform2ToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void informe1ToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+
+        }
     }
 }

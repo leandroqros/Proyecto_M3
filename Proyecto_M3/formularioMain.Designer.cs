@@ -43,7 +43,13 @@ namespace Proyecto_M3
             this.tbResultat = new System.Windows.Forms.TextBox();
             this.lbElementos = new System.Windows.Forms.Label();
             this.lbDatos = new System.Windows.Forms.Label();
+            this.menuStrip1 = new System.Windows.Forms.MenuStrip();
+            this.informesM04ToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.informe1ToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.informe2ToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.informe3ToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             ((System.ComponentModel.ISupportInitialize)(this.pbImagen)).BeginInit();
+            this.menuStrip1.SuspendLayout();
             this.SuspendLayout();
             // 
             // btArchivo
@@ -95,7 +101,6 @@ namespace Proyecto_M3
             // 
             // cbPadre
             // 
-            this.cbPadre.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
             this.cbPadre.FormattingEnabled = true;
             this.cbPadre.Location = new System.Drawing.Point(163, 237);
             this.cbPadre.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
@@ -107,7 +112,7 @@ namespace Proyecto_M3
             // 
             // cbHijo
             // 
-            this.cbHijo.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
+            this.cbHijo.Anchor = System.Windows.Forms.AnchorStyles.Top;
             this.cbHijo.FormattingEnabled = true;
             this.cbHijo.Location = new System.Drawing.Point(378, 237);
             this.cbHijo.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
@@ -202,6 +207,46 @@ namespace Proyecto_M3
             this.lbDatos.TabIndex = 14;
             this.lbDatos.Text = "Datos:";
             // 
+            // menuStrip1
+            // 
+            this.menuStrip1.ImageScalingSize = new System.Drawing.Size(20, 20);
+            this.menuStrip1.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
+            this.informesM04ToolStripMenuItem});
+            this.menuStrip1.Location = new System.Drawing.Point(0, 0);
+            this.menuStrip1.Name = "menuStrip1";
+            this.menuStrip1.Size = new System.Drawing.Size(902, 28);
+            this.menuStrip1.TabIndex = 15;
+            this.menuStrip1.Text = "menuStrip1";
+            // 
+            // informesM04ToolStripMenuItem
+            // 
+            this.informesM04ToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
+            this.informe1ToolStripMenuItem,
+            this.informe2ToolStripMenuItem,
+            this.informe3ToolStripMenuItem});
+            this.informesM04ToolStripMenuItem.Name = "informesM04ToolStripMenuItem";
+            this.informesM04ToolStripMenuItem.Size = new System.Drawing.Size(124, 24);
+            this.informesM04ToolStripMenuItem.Text = "Informes - M04";
+            // 
+            // informe1ToolStripMenuItem
+            // 
+            this.informe1ToolStripMenuItem.Name = "informe1ToolStripMenuItem";
+            this.informe1ToolStripMenuItem.Size = new System.Drawing.Size(224, 26);
+            this.informe1ToolStripMenuItem.Text = "Informe 1";
+            this.informe1ToolStripMenuItem.Click += new System.EventHandler(this.informe1ToolStripMenuItem_Click);
+            // 
+            // informe2ToolStripMenuItem
+            // 
+            this.informe2ToolStripMenuItem.Name = "informe2ToolStripMenuItem";
+            this.informe2ToolStripMenuItem.Size = new System.Drawing.Size(224, 26);
+            this.informe2ToolStripMenuItem.Text = "Informe 2";
+            // 
+            // informe3ToolStripMenuItem
+            // 
+            this.informe3ToolStripMenuItem.Name = "informe3ToolStripMenuItem";
+            this.informe3ToolStripMenuItem.Size = new System.Drawing.Size(224, 26);
+            this.informe3ToolStripMenuItem.Text = "Informe 3";
+            // 
             // formularioMain
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
@@ -220,11 +265,14 @@ namespace Proyecto_M3
             this.Controls.Add(this.btBuscar);
             this.Controls.Add(this.btCargar);
             this.Controls.Add(this.btArchivo);
+            this.Controls.Add(this.menuStrip1);
             this.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.Name = "formularioMain";
             this.Text = "Solidarity At Home - Subtropical";
             this.Load += new System.EventHandler(this.formularioMain_Load);
             ((System.ComponentModel.ISupportInitialize)(this.pbImagen)).EndInit();
+            this.menuStrip1.ResumeLayout(false);
+            this.menuStrip1.PerformLayout();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -245,6 +293,11 @@ namespace Proyecto_M3
         private System.Windows.Forms.TextBox tbResultat;
         private System.Windows.Forms.Label lbElementos;
         private System.Windows.Forms.Label lbDatos;
+        private System.Windows.Forms.MenuStrip menuStrip1;
+        private System.Windows.Forms.ToolStripMenuItem informesM04ToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem informe1ToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem informe2ToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem informe3ToolStripMenuItem;
     }
 }
 
