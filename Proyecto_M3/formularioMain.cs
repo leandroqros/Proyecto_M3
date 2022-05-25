@@ -19,6 +19,7 @@ namespace Proyecto_M3
         List<string> FullName_Refugees = new List<string>();
         List<string> DeliveryNote_FoodsDelivered = new List<string>();
         string nom_arxiu;
+        bool hay_archivo;
 
         public formularioMain()
         {
@@ -36,10 +37,19 @@ namespace Proyecto_M3
                 if (ofdArchivo.ShowDialog() == System.Windows.Forms.DialogResult.OK)
                 {
                     /*MessageBox.Show("Archivo " + ofdArchivo.FileName + " abierto.");*/
+                    hay_archivo = true;
+                }
+                else
+                {
+                    MessageBox.Show("Archivo no encontrado.");
+                    hay_archivo = false;
                 }
                 ruta = ofdArchivo.FileName;
+
+
             }
             txtArchivo.Text = ruta;
+
 
             nom_arxiu = ruta;
         }
@@ -61,6 +71,7 @@ namespace Proyecto_M3
 
         private void btCargar_Click(object sender, EventArgs e)
         {
+            cbPadre.Items.Clear();
             string elementName, elementData;
             string linia;
             bool guardarFullName_Hosts, guardarFullName_Refugees, guardarDescFood_Foods;
@@ -70,69 +81,75 @@ namespace Proyecto_M3
             guardarFullName_Hosts = false;
             guardarFullName_Refugees = false;
             guardarDescFood_Foods = false;
-
-            using (StreamReader sr = new StreamReader(nom_arxiu))
+            if (hay_archivo == true)
             {
-                while (linia != "</SolidarityAtHome>")
+                using (StreamReader sr = new StreamReader(nom_arxiu))
                 {
-                    if (linia[0] != ' ' && linia[1] != '/')
+                    if (categorias.Count < 4)
                     {
-                        categorias.Add(elementName);
+
+                        while (linia != "</SolidarityAtHome>")
+                        {
+
+                            if (linia[0] != ' ' && linia[1] != '/')
+                            {
+                                categorias.Add(elementName);
+                            }
+
+                            if (elementName == "Host")
+                            {
+                                guardarFullName_Hosts = true;
+                            }
+
+                            if (guardarFullName_Hosts && elementName == "FullName")
+                            {
+                                elementData = GetElementData(linia);
+                                FullName_Hosts.Add(elementData);
+                                guardarFullName_Hosts = false;
+                            }
+
+                            if (elementName == "/Foods" && guardarDescFood_Foods)
+                            {
+                                guardarDescFood_Foods = false;
+                            }
+
+                            if (elementName == "Foods")
+                            {
+                                guardarDescFood_Foods = true;
+                            }
+
+                            if (guardarDescFood_Foods && elementName == "DescFood")
+                            {
+                                elementData = GetElementData(linia);
+                                DescFood_Foods.Add(elementData);
+
+                            }
+
+                            if (elementName == "Refugee")
+                            {
+                                guardarFullName_Refugees = true;
+                            }
+
+                            if (guardarFullName_Refugees && elementName == "FullName")
+                            {
+                                elementData = GetElementData(linia);
+                                FullName_Refugees.Add(elementData);
+                                guardarFullName_Refugees = false;
+                            }
+
+                            if (elementName == "DeliveryNote")
+                            {
+                                elementData = GetElementData(linia);
+                                DeliveryNote_FoodsDelivered.Add(elementData);
+                            }
+
+                            linia = sr.ReadLine();
+
+                            elementName = GetElementName(linia);
+                        }
                     }
-
-                    if (elementName == "Host")
-                    {
-                        guardarFullName_Hosts = true;
-                    }
-
-                    if (guardarFullName_Hosts && elementName == "FullName")
-                    {
-                        elementData = GetElementData(linia);
-                        FullName_Hosts.Add(elementData);
-                        guardarFullName_Hosts = false;
-                    }
-
-                    if (elementName == "/Foods" && guardarDescFood_Foods)
-                    {
-                        guardarDescFood_Foods = false;
-                    }
-
-                    if (elementName == "Foods")
-                    {
-                        guardarDescFood_Foods = true;
-                    }
-
-                    if (guardarDescFood_Foods && elementName == "DescFood")
-                    {
-                        elementData = GetElementData(linia);
-                        DescFood_Foods.Add(elementData);
-
-                    }
-
-                    if (elementName == "Refugee")
-                    {
-                        guardarFullName_Refugees = true;
-                    }
-
-                    if (guardarFullName_Refugees && elementName == "FullName")
-                    {
-                        elementData = GetElementData(linia);
-                        FullName_Refugees.Add(elementData);
-                        guardarFullName_Refugees = false;
-                    }
-
-                    if (elementName == "DeliveryNote")
-                    {
-                        elementData = GetElementData(linia);
-                        DeliveryNote_FoodsDelivered.Add(elementData);
-                    }
-
-                    linia = sr.ReadLine();
-
-                    elementName = GetElementName(linia);
                 }
             }
-
             categorias.Remove("SolidarityAtHome");
 
             for (int i = 0; i < categorias.Count; i++)
@@ -145,7 +162,7 @@ namespace Proyecto_M3
 
         private void cbPadre_SelectedIndexChanged(object sender, EventArgs e)
         {
-
+            cbHijo.Items.Clear();
             switch (cbPadre.Text)
             {
                 case "Hosts":

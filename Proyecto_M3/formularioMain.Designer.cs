@@ -93,6 +93,7 @@ namespace Proyecto_M3
             this.cbPadre.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
             this.cbPadre.Name = "cbPadre";
             this.cbPadre.Size = new System.Drawing.Size(228, 28);
+            this.cbPadre.Sorted = true;
             this.cbPadre.TabIndex = 4;
             this.cbPadre.SelectedIndexChanged += new System.EventHandler(this.cbPadre_SelectedIndexChanged);
             // 
@@ -103,6 +104,7 @@ namespace Proyecto_M3
             this.cbHijo.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
             this.cbHijo.Name = "cbHijo";
             this.cbHijo.Size = new System.Drawing.Size(228, 28);
+            this.cbHijo.Sorted = true;
             this.cbHijo.TabIndex = 5;
             // 
             // lbTitulo
