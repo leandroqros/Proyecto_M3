@@ -43,20 +43,20 @@ namespace Proyecto_M3
             this.tbResultat = new System.Windows.Forms.TextBox();
             this.lbElementos = new System.Windows.Forms.Label();
             this.lbDatos = new System.Windows.Forms.Label();
-            this.menuStrip1 = new System.Windows.Forms.MenuStrip();
+            this.menuInformes = new System.Windows.Forms.MenuStrip();
             this.informesM04ToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.informe1ToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.informe2ToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.informe3ToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             ((System.ComponentModel.ISupportInitialize)(this.pbImagen)).BeginInit();
-            this.menuStrip1.SuspendLayout();
+            this.menuInformes.SuspendLayout();
             this.SuspendLayout();
             // 
             // btArchivo
             // 
             this.btArchivo.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
             this.btArchivo.Location = new System.Drawing.Point(589, 159);
-            this.btArchivo.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.btArchivo.Margin = new System.Windows.Forms.Padding(4);
             this.btArchivo.Name = "btArchivo";
             this.btArchivo.Size = new System.Drawing.Size(46, 28);
             this.btArchivo.TabIndex = 0;
@@ -68,7 +68,7 @@ namespace Proyecto_M3
             // 
             this.btCargar.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
             this.btCargar.Location = new System.Drawing.Point(643, 159);
-            this.btCargar.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.btCargar.Margin = new System.Windows.Forms.Padding(4);
             this.btCargar.Name = "btCargar";
             this.btCargar.Size = new System.Drawing.Size(95, 28);
             this.btCargar.TabIndex = 1;
@@ -80,7 +80,7 @@ namespace Proyecto_M3
             // 
             this.btBuscar.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
             this.btBuscar.Location = new System.Drawing.Point(589, 196);
-            this.btBuscar.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.btBuscar.Margin = new System.Windows.Forms.Padding(4);
             this.btBuscar.Name = "btBuscar";
             this.btBuscar.Size = new System.Drawing.Size(149, 28);
             this.btBuscar.TabIndex = 2;
@@ -92,7 +92,7 @@ namespace Proyecto_M3
             // 
             this.btAgregar.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
             this.btAgregar.Location = new System.Drawing.Point(589, 233);
-            this.btAgregar.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.btAgregar.Margin = new System.Windows.Forms.Padding(4);
             this.btAgregar.Name = "btAgregar";
             this.btAgregar.Size = new System.Drawing.Size(149, 28);
             this.btAgregar.TabIndex = 3;
@@ -103,7 +103,7 @@ namespace Proyecto_M3
             // 
             this.cbPadre.FormattingEnabled = true;
             this.cbPadre.Location = new System.Drawing.Point(163, 237);
-            this.cbPadre.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.cbPadre.Margin = new System.Windows.Forms.Padding(4);
             this.cbPadre.Name = "cbPadre";
             this.cbPadre.Size = new System.Drawing.Size(203, 24);
             this.cbPadre.Sorted = true;
@@ -115,7 +115,7 @@ namespace Proyecto_M3
             this.cbHijo.Anchor = System.Windows.Forms.AnchorStyles.Top;
             this.cbHijo.FormattingEnabled = true;
             this.cbHijo.Location = new System.Drawing.Point(378, 237);
-            this.cbHijo.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.cbHijo.Margin = new System.Windows.Forms.Padding(4);
             this.cbHijo.Name = "cbHijo";
             this.cbHijo.Size = new System.Drawing.Size(203, 24);
             this.cbHijo.Sorted = true;
@@ -150,7 +150,7 @@ namespace Proyecto_M3
             | System.Windows.Forms.AnchorStyles.Right)));
             this.txtArchivo.Enabled = false;
             this.txtArchivo.Location = new System.Drawing.Point(229, 163);
-            this.txtArchivo.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.txtArchivo.Margin = new System.Windows.Forms.Padding(4);
             this.txtArchivo.Name = "txtArchivo";
             this.txtArchivo.Size = new System.Drawing.Size(352, 22);
             this.txtArchivo.TabIndex = 10;
@@ -207,16 +207,16 @@ namespace Proyecto_M3
             this.lbDatos.TabIndex = 14;
             this.lbDatos.Text = "Datos:";
             // 
-            // menuStrip1
+            // menuInformes
             // 
-            this.menuStrip1.ImageScalingSize = new System.Drawing.Size(20, 20);
-            this.menuStrip1.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
+            this.menuInformes.ImageScalingSize = new System.Drawing.Size(20, 20);
+            this.menuInformes.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
             this.informesM04ToolStripMenuItem});
-            this.menuStrip1.Location = new System.Drawing.Point(0, 0);
-            this.menuStrip1.Name = "menuStrip1";
-            this.menuStrip1.Size = new System.Drawing.Size(902, 28);
-            this.menuStrip1.TabIndex = 15;
-            this.menuStrip1.Text = "menuStrip1";
+            this.menuInformes.Location = new System.Drawing.Point(0, 0);
+            this.menuInformes.Name = "menuInformes";
+            this.menuInformes.Size = new System.Drawing.Size(902, 28);
+            this.menuInformes.TabIndex = 15;
+            this.menuInformes.Text = "menuInformes";
             // 
             // informesM04ToolStripMenuItem
             // 
@@ -227,6 +227,7 @@ namespace Proyecto_M3
             this.informesM04ToolStripMenuItem.Name = "informesM04ToolStripMenuItem";
             this.informesM04ToolStripMenuItem.Size = new System.Drawing.Size(124, 24);
             this.informesM04ToolStripMenuItem.Text = "Informes - M04";
+            this.informesM04ToolStripMenuItem.Click += new System.EventHandler(this.informesM04ToolStripMenuItem_Click);
             // 
             // informe1ToolStripMenuItem
             // 
@@ -265,14 +266,14 @@ namespace Proyecto_M3
             this.Controls.Add(this.btBuscar);
             this.Controls.Add(this.btCargar);
             this.Controls.Add(this.btArchivo);
-            this.Controls.Add(this.menuStrip1);
-            this.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.Controls.Add(this.menuInformes);
+            this.Margin = new System.Windows.Forms.Padding(4);
             this.Name = "formularioMain";
             this.Text = "Solidarity At Home - Subtropical";
             this.Load += new System.EventHandler(this.formularioMain_Load);
             ((System.ComponentModel.ISupportInitialize)(this.pbImagen)).EndInit();
-            this.menuStrip1.ResumeLayout(false);
-            this.menuStrip1.PerformLayout();
+            this.menuInformes.ResumeLayout(false);
+            this.menuInformes.PerformLayout();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -293,7 +294,7 @@ namespace Proyecto_M3
         private System.Windows.Forms.TextBox tbResultat;
         private System.Windows.Forms.Label lbElementos;
         private System.Windows.Forms.Label lbDatos;
-        private System.Windows.Forms.MenuStrip menuStrip1;
+        private System.Windows.Forms.MenuStrip menuInformes;
         private System.Windows.Forms.ToolStripMenuItem informesM04ToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem informe1ToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem informe2ToolStripMenuItem;

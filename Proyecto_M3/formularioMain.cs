@@ -283,14 +283,19 @@ namespace Proyecto_M3
 
         }
 
-        private void inform2ToolStripMenuItem_Click(object sender, EventArgs e)
-        {
-
-        }
-
         private void informe1ToolStripMenuItem_Click(object sender, EventArgs e)
         {
+            /*CrystalReport1 crystalReport1 = new CrystalReport1();
 
+            CrystalReport1.ReportSource = crystalReport1;*/
+            formulario_Informe1 inform1 = new formulario_Informe1();
+
+            inform1.Show();
+        }
+
+        private void informesM04ToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+           
         }
     }
 }
