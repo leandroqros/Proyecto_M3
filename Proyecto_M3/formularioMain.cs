@@ -267,5 +267,17 @@ namespace Proyecto_M3
         {
 
         }
+
+        private void btBuscar_Click(object sender, EventArgs e)
+        {
+            if (1 > 2)
+            {
+                
+            } else
+            {
+                tbResultat.Text = "No tienes seleccionado nigun dato. \n";
+            }
+
+        }
     }
 }
