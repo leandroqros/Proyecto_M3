@@ -13,6 +13,11 @@ namespace Proyecto_M3
 {
     public partial class formularioMain : Form
     {
+        List<string> categorias = new List<string>();
+        List<string> FullName_Hosts = new List<string>();
+        List<string> DescFood_Foods = new List<string>();
+        List<string> FullName_Refugees = new List<string>();
+        List<string> DeliveryNote_FoodsDelivered = new List<string>();
         string nom_arxiu;
 
         public formularioMain()
@@ -56,24 +61,75 @@ namespace Proyecto_M3
 
         private void btCargar_Click(object sender, EventArgs e)
         {
-            List<string> categorias = new List<string>();
-            string elementName;
+            string elementName, elementData;
             string linia;
+            bool guardarFullName_Hosts, guardarFullName_Refugees, guardarDescFood_Foods;
 
             linia = "  ";
+            elementName = "";
+            guardarFullName_Hosts = false;
+            guardarFullName_Refugees = false;
+            guardarDescFood_Foods = false;
 
             using (StreamReader sr = new StreamReader(nom_arxiu))
             {
-                while(linia != null)
+                while(linia != "</SolidarityAtHome>")
                 {
                     if(linia[0] != ' ' && linia[1] != '/')
                     {
-                        elementName = GetElementName(linia);
-
                         categorias.Add(elementName);
                     }
 
+                    if(elementName == "Host")
+                    {
+                        guardarFullName_Hosts = true;
+                    }
+
+                    if(guardarFullName_Hosts && elementName == "FullName")
+                    {
+                        elementData = GetElementData(linia);
+                        FullName_Hosts.Add(elementData);
+                        guardarFullName_Hosts = false;
+                    }
+
+                    if(elementName == "/Foods" && guardarDescFood_Foods)
+                    {
+                        guardarDescFood_Foods = false;
+                    }
+
+                    if(elementName == "Foods")
+                    {
+                        guardarDescFood_Foods = true;
+                    }
+
+                    if(guardarDescFood_Foods && elementName == "DescFood")
+                    {
+                        elementData = GetElementData(linia);
+                        DescFood_Foods.Add(elementData);
+                    
+                    }
+
+                    if(elementName == "Refugee")
+                    {
+                        guardarFullName_Refugees = true;
+                    }
+
+                    if(guardarFullName_Refugees && elementName == "FullName")
+                    {
+                        elementData = GetElementData(linia);
+                        FullName_Refugees.Add(elementData);
+                        guardarFullName_Refugees = false;
+                    }
+
+                    if(elementName == "DeliveryNote")
+                    {
+                        elementData = GetElementData(linia);
+                        DeliveryNote_FoodsDelivered.Add(elementData);
+                    }
+
                     linia = sr.ReadLine();
+
+                    elementName = GetElementName(linia);
                 }   
             }
 
@@ -83,72 +139,44 @@ namespace Proyecto_M3
             {
                 cbPadre.Items.Add(categorias[i]);
             }
+
+            
         }
 
         private void cbPadre_SelectedIndexChanged(object sender, EventArgs e)
         {
 
-        }
-
-        public string replaceCaracter(string paraula, char original, char fi)
-        {
-            string bonaparaula;
-            int longitud, i;
-            char caracter;
-
-            longitud = paraula.Length;
-
-            bonaparaula = "";
-            for (i = 0; i < longitud; i++)
+            switch (cbPadre.Text)
             {
-                caracter = paraula[i];
-
-                if (caracter != original)
-                {
-                    bonaparaula += caracter;
-                }
-                else
-                {
-                    bonaparaula += fi;
-                }
-            }
-
-            return bonaparaula;
-        }
-
-        /*private List<string> GetElementName()
-        {
-            List<string> elementos = new List<string>();
-
-            using (StreamReader sr = new StreamReader(nom_arxiu))
-            {
-                string linia;
-                char first, second;
-
-                linia = "  ";
-                first = ' ';
-                second = ' ';
-
-                while (linia != null)
-                {
-                    first = linia[0];
-                    second = linia[1];
-
-                    if (first == '<' && second != '/')
+                case "Hosts":
+                    for (int i = 0; i < FullName_Hosts.Count; i++)
                     {
-                        linia = replaceCaracter(linia, '<', ' ');
-                        linia = replaceCaracter(linia, '>', ' ');
-                        linia = linia.Trim();
-                        elementos.Add(linia);
+                        cbHijo.Items.Add(FullName_Hosts[i]);
                     }
-                    linia = sr.ReadLine();
-                }
+                    break;
 
-                elementos.Remove("SolidarityAtHome");
+                case "Foods":
+                    for (int i = 0; i < DescFood_Foods.Count; i++)
+                    {
+                        cbHijo.Items.Add(DescFood_Foods[i]);
+                    }
+                    break;
 
-                return elementos;
+                case "Refugees":
+                    for (int i = 0; i < FullName_Refugees.Count; i++)
+                    {
+                        cbHijo.Items.Add(FullName_Refugees[i]);
+                    }
+                    break;
+
+                case "FoodsDelivered":
+                    for (int i = 0; i < DeliveryNote_FoodsDelivered.Count; i++)
+                    {
+                        cbHijo.Items.Add(DeliveryNote_FoodsDelivered[i]);
+                    }
+                    break;
             }
-        }*/
+        }
 
         private string GetElementName(string linia)
         {
@@ -216,6 +244,11 @@ namespace Proyecto_M3
             }
 
             return elementData;
+        }
+
+        private void cbHijo_SelectedIndexChanged(object sender, EventArgs e)
+        {
+
         }
     }
 }
