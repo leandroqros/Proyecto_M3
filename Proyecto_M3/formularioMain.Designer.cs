@@ -47,7 +47,7 @@ namespace Proyecto_M3
             // btArchivo
             // 
             this.btArchivo.Location = new System.Drawing.Point(589, 158);
-            this.btArchivo.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.btArchivo.Margin = new System.Windows.Forms.Padding(4);
             this.btArchivo.Name = "btArchivo";
             this.btArchivo.Size = new System.Drawing.Size(45, 28);
             this.btArchivo.TabIndex = 0;
@@ -58,7 +58,7 @@ namespace Proyecto_M3
             // btCargar
             // 
             this.btCargar.Location = new System.Drawing.Point(643, 158);
-            this.btCargar.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.btCargar.Margin = new System.Windows.Forms.Padding(4);
             this.btCargar.Name = "btCargar";
             this.btCargar.Size = new System.Drawing.Size(94, 28);
             this.btCargar.TabIndex = 1;
@@ -69,7 +69,7 @@ namespace Proyecto_M3
             // btBuscar
             // 
             this.btBuscar.Location = new System.Drawing.Point(589, 196);
-            this.btBuscar.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.btBuscar.Margin = new System.Windows.Forms.Padding(4);
             this.btBuscar.Name = "btBuscar";
             this.btBuscar.Size = new System.Drawing.Size(149, 28);
             this.btBuscar.TabIndex = 2;
@@ -79,7 +79,7 @@ namespace Proyecto_M3
             // btAgregar
             // 
             this.btAgregar.Location = new System.Drawing.Point(589, 233);
-            this.btAgregar.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.btAgregar.Margin = new System.Windows.Forms.Padding(4);
             this.btAgregar.Name = "btAgregar";
             this.btAgregar.Size = new System.Drawing.Size(149, 28);
             this.btAgregar.TabIndex = 3;
@@ -90,9 +90,10 @@ namespace Proyecto_M3
             // 
             this.cbPadre.FormattingEnabled = true;
             this.cbPadre.Location = new System.Drawing.Point(164, 196);
-            this.cbPadre.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.cbPadre.Margin = new System.Windows.Forms.Padding(4);
             this.cbPadre.Name = "cbPadre";
             this.cbPadre.Size = new System.Drawing.Size(203, 24);
+            this.cbPadre.Sorted = true;
             this.cbPadre.TabIndex = 4;
             this.cbPadre.SelectedIndexChanged += new System.EventHandler(this.cbPadre_SelectedIndexChanged);
             // 
@@ -100,9 +101,10 @@ namespace Proyecto_M3
             // 
             this.cbHijo.FormattingEnabled = true;
             this.cbHijo.Location = new System.Drawing.Point(379, 196);
-            this.cbHijo.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.cbHijo.Margin = new System.Windows.Forms.Padding(4);
             this.cbHijo.Name = "cbHijo";
             this.cbHijo.Size = new System.Drawing.Size(203, 24);
+            this.cbHijo.Sorted = true;
             this.cbHijo.TabIndex = 5;
             this.cbHijo.SelectedIndexChanged += new System.EventHandler(this.cbHijo_SelectedIndexChanged);
             // 
@@ -133,7 +135,7 @@ namespace Proyecto_M3
             // 
             this.txtArchivo.Enabled = false;
             this.txtArchivo.Location = new System.Drawing.Point(229, 162);
-            this.txtArchivo.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.txtArchivo.Margin = new System.Windows.Forms.Padding(4);
             this.txtArchivo.Name = "txtArchivo";
             this.txtArchivo.Size = new System.Drawing.Size(352, 22);
             this.txtArchivo.TabIndex = 10;
@@ -180,7 +182,7 @@ namespace Proyecto_M3
             this.Controls.Add(this.btBuscar);
             this.Controls.Add(this.btCargar);
             this.Controls.Add(this.btArchivo);
-            this.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.Margin = new System.Windows.Forms.Padding(4);
             this.Name = "formularioMain";
             this.Text = "Solidarity At Home - Subtropical";
             ((System.ComponentModel.ISupportInitialize)(this.pbImagen)).EndInit();
