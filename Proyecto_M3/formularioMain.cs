@@ -56,21 +56,32 @@ namespace Proyecto_M3
 
         private void btCargar_Click(object sender, EventArgs e)
         {
-            List<string> elementos = new List<string>();
+            List<string> categorias = new List<string>();
+            string elementName;
+            string linia;
 
-            /*string linia;
+            linia = "  ";
 
             using (StreamReader sr = new StreamReader(nom_arxiu))
             {
-                linia = sr.ReadLine();
+                while(linia != null)
+                {
+                    if(linia[0] != ' ' && linia[1] != '/')
+                    {
+                        elementName = GetElementName(linia);
 
-            }*/
+                        categorias.Add(elementName);
+                    }
 
-            elementos = GetElementName();
-            
-            for (int i = 0; i < elementos.Count; i++)
+                    linia = sr.ReadLine();
+                }   
+            }
+
+            categorias.Remove("SolidarityAtHome");
+
+            for (int i = 0; i < categorias.Count; i++)
             {
-                cbPadre.Items.Add(elementos[i]);
+                cbPadre.Items.Add(categorias[i]);
             }
         }
 
@@ -105,7 +116,7 @@ namespace Proyecto_M3
             return bonaparaula;
         }
 
-        private List<string> GetElementName()
+        /*private List<string> GetElementName()
         {
             List<string> elementos = new List<string>();
 
@@ -137,6 +148,74 @@ namespace Proyecto_M3
 
                 return elementos;
             }
+        }*/
+
+        private string GetElementName(string linia)
+        {
+            int comptador;
+            char caracter;
+            string elementName;
+
+            comptador = 0;
+            elementName = "";
+            caracter = ' ';
+
+            linia = linia.Trim();
+
+            while(caracter != '>')
+            {
+                caracter = linia[comptador];
+
+                if (caracter != '<' && caracter != '>')
+                {
+                    elementName += caracter;
+                }
+
+                comptador++;
+            }
+
+            return elementName;
+        }
+
+        private string GetElementData(string linia)
+        {
+            bool data, final;
+            int comptador;
+            char caracter;
+            string elementData;
+
+            data = false;
+            final = true;
+            comptador = 0;
+            caracter = ' ';
+            elementData = "";
+
+            linia = linia.Trim();
+
+            while (final)
+            {
+                caracter = linia[comptador];
+
+                if(caracter == '<' && data)
+                {
+                    final = false;
+                    data = false;
+                }
+
+                if(caracter == '>')
+                {
+                    data = true;
+                }
+
+                if(data && caracter != '>')
+                {
+                    elementData += caracter;
+                }
+
+                comptador++;
+            }
+
+            return elementData;
         }
     }
 }
