@@ -46,6 +46,7 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Objetos.cs" />
     <Compile Include="formularioMain.cs">
       <SubType>Form</SubType>
     </Compile>

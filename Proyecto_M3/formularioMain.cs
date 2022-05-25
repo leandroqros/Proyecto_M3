@@ -85,7 +85,7 @@ namespace Proyecto_M3
             {
                 using (StreamReader sr = new StreamReader(nom_arxiu))
                 {
-                    if (categorias.Count < 4)
+                    if (categorias.Count <= cbPadre.Items.Count)
                     {
 
                         while (linia != "</SolidarityAtHome>")
@@ -264,6 +264,21 @@ namespace Proyecto_M3
         }
 
         private void cbHijo_SelectedIndexChanged(object sender, EventArgs e)
+        {
+
+        }
+
+        private void btBuscar_Click(object sender, EventArgs e)
+        {
+            
+        }
+
+        private void formularioMain_Load(object sender, EventArgs e)
+        {
+
+        }
+
+        private void label1_Click(object sender, EventArgs e)
         {
 
         }
