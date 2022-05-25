@@ -44,8 +44,11 @@ namespace Proyecto_M3
                     hay_archivo = false;
                 }
                 ruta = ofdArchivo.FileName;
+
+                
             }
             txtArchivo.Text = ruta;
+            
 
             nom_arxiu = ruta;
         }
@@ -80,56 +83,59 @@ namespace Proyecto_M3
             {
                 using (StreamReader sr = new StreamReader(nom_arxiu))
                 {
-                
-                    while(linia != "</SolidarityAtHome>")
+                    if (categorias.Count < 4)
                     {
-                        if(linia[0] != ' ' && linia[1] != '/')
+
+                    while (linia != "</SolidarityAtHome>")
+                    {
+                        
+                        if (linia[0] != ' ' && linia[1] != '/')
                         {
                             categorias.Add(elementName);
                         }
 
-                        if(elementName == "Host")
+                        if (elementName == "Host")
                         {
                             guardarFullName_Hosts = true;
                         }
 
-                        if(guardarFullName_Hosts && elementName == "FullName")
+                        if (guardarFullName_Hosts && elementName == "FullName")
                         {
                             elementData = GetElementData(linia);
                             FullName_Hosts.Add(elementData);
                             guardarFullName_Hosts = false;
                         }
 
-                        if(elementName == "/Foods" && guardarDescFood_Foods)
+                        if (elementName == "/Foods" && guardarDescFood_Foods)
                         {
                             guardarDescFood_Foods = false;
                         }
 
-                        if(elementName == "Foods")
+                        if (elementName == "Foods")
                         {
                             guardarDescFood_Foods = true;
                         }
 
-                        if(guardarDescFood_Foods && elementName == "DescFood")
+                        if (guardarDescFood_Foods && elementName == "DescFood")
                         {
                             elementData = GetElementData(linia);
                             DescFood_Foods.Add(elementData);
-                    
+
                         }
 
-                        if(elementName == "Refugee")
+                        if (elementName == "Refugee")
                         {
                             guardarFullName_Refugees = true;
                         }
 
-                        if(guardarFullName_Refugees && elementName == "FullName")
+                        if (guardarFullName_Refugees && elementName == "FullName")
                         {
                             elementData = GetElementData(linia);
                             FullName_Refugees.Add(elementData);
                             guardarFullName_Refugees = false;
                         }
 
-                        if(elementName == "DeliveryNote")
+                        if (elementName == "DeliveryNote")
                         {
                             elementData = GetElementData(linia);
                             DeliveryNote_FoodsDelivered.Add(elementData);
@@ -138,15 +144,14 @@ namespace Proyecto_M3
                         linia = sr.ReadLine();
 
                         elementName = GetElementName(linia);
-                    } 
-                }
-                
-            }
-            else
-            {
-                MessageBox.Show("Archivo no encontrado.");
-            }
+                    }
 
+                    } else
+                    {
+                        MessageBox.Show("Archivo no encontrado.");
+                    }
+                }
+            }
             categorias.Remove("SolidarityAtHome");
 
             for (int i = 0; i < categorias.Count; i++)
