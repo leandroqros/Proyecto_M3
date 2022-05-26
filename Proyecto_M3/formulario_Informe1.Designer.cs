@@ -30,7 +30,7 @@ namespace Proyecto_M3
         private void InitializeComponent()
         {
             this.crystalReportViewer1 = new CrystalDecisions.Windows.Forms.CrystalReportViewer();
-            this.CrystalReport11 = new Proyecto_M3.CrystalReport1();
+            this.CrystalReport11 = new Proyecto_M3.Informe1();
             this.SuspendLayout();
             // 
             // crystalReportViewer1
@@ -62,6 +62,6 @@ namespace Proyecto_M3
         #endregion
 
         private CrystalDecisions.Windows.Forms.CrystalReportViewer crystalReportViewer1;
-        private CrystalReport1 CrystalReport11;
+        private Informe1 CrystalReport11;
     }
 }

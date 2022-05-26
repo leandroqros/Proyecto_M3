@@ -53,10 +53,10 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="CrystalReport1.cs">
+    <Compile Include="Informe1.cs">
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
-      <DependentUpon>CrystalReport1.rpt</DependentUpon>
+      <DependentUpon>Informe1.rpt</DependentUpon>
       <SubType>Component</SubType>
     </Compile>
     <Compile Include="formulario_Informe1.cs">
@@ -65,7 +65,6 @@
     <Compile Include="formulario_Informe1.Designer.cs">
       <DependentUpon>formulario_Informe1.cs</DependentUpon>
     </Compile>
-    <Compile Include="Objetos.cs" />
     <Compile Include="formularioMain.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -74,9 +73,9 @@
     </Compile>
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
-    <EmbeddedResource Include="CrystalReport1.rpt">
+    <EmbeddedResource Include="Informe1.rpt">
       <Generator>CrystalDecisions.VSDesigner.CodeGen.ReportCodeGenerator</Generator>
-      <LastGenOutput>CrystalReport1.cs</LastGenOutput>
+      <LastGenOutput>Informe1.cs</LastGenOutput>
     </EmbeddedResource>
     <EmbeddedResource Include="formularioMain.resx">
       <DependentUpon>formularioMain.cs</DependentUpon>

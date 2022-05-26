@@ -98,6 +98,7 @@ namespace Proyecto_M3
             this.btAgregar.TabIndex = 3;
             this.btAgregar.Text = "Agregar";
             this.btAgregar.UseVisualStyleBackColor = true;
+            this.btAgregar.Click += new System.EventHandler(this.btAgregar_Click);
             // 
             // cbPadre
             // 
@@ -120,6 +121,7 @@ namespace Proyecto_M3
             this.cbHijo.Size = new System.Drawing.Size(203, 24);
             this.cbHijo.Sorted = true;
             this.cbHijo.TabIndex = 5;
+            this.cbHijo.SelectedIndexChanged += new System.EventHandler(this.cbHijo_SelectedIndexChanged_1);
             // 
             // lbTitulo
             // 
@@ -174,10 +176,10 @@ namespace Proyecto_M3
             this.tbResultat.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
             | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
-            this.tbResultat.Enabled = false;
             this.tbResultat.Location = new System.Drawing.Point(163, 268);
             this.tbResultat.Multiline = true;
             this.tbResultat.Name = "tbResultat";
+            this.tbResultat.ScrollBars = System.Windows.Forms.ScrollBars.Vertical;
             this.tbResultat.Size = new System.Drawing.Size(575, 160);
             this.tbResultat.TabIndex = 12;
             this.tbResultat.TextChanged += new System.EventHandler(this.tbResultat_TextChanged);
@@ -209,12 +211,13 @@ namespace Proyecto_M3
             // 
             // menuInformes
             // 
+            this.menuInformes.BackColor = System.Drawing.SystemColors.Control;
             this.menuInformes.ImageScalingSize = new System.Drawing.Size(20, 20);
             this.menuInformes.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
             this.informesM04ToolStripMenuItem});
             this.menuInformes.Location = new System.Drawing.Point(0, 0);
             this.menuInformes.Name = "menuInformes";
-            this.menuInformes.Size = new System.Drawing.Size(902, 28);
+            this.menuInformes.Size = new System.Drawing.Size(902, 30);
             this.menuInformes.TabIndex = 15;
             this.menuInformes.Text = "menuInformes";
             // 
