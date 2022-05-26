@@ -85,7 +85,7 @@ namespace Proyecto_M3
             {
                 using (StreamReader sr = new StreamReader(nom_arxiu))
                 {
-                    if (categorias.Count < 4)
+                    if (categorias.Count <= cbPadre.Items.Count)
                     {
 
                         while (linia != "</SolidarityAtHome>")
@@ -270,13 +270,15 @@ namespace Proyecto_M3
 
         private void btBuscar_Click(object sender, EventArgs e)
         {
-            if (1 > 2)
+            if (cbPadre.Items.Contains(" "))
             {
-                
-            } else
-            {
-                tbResultat.Text = "No tienes seleccionado nigun dato. \n";
+                MessageBox.Show("No tienes seleccionado nigun dato.");
             }
+
+        }
+
+        private void cbHijo_SelectedIndexChanged_1(object sender, EventArgs e)
+        {
 
         }
     }
