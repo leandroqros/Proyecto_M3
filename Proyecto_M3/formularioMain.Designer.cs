@@ -56,10 +56,9 @@ namespace Proyecto_M3
             // btArchivo
             // 
             this.btArchivo.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
-            this.btArchivo.Location = new System.Drawing.Point(589, 159);
-            this.btArchivo.Margin = new System.Windows.Forms.Padding(4);
+            this.btArchivo.Location = new System.Drawing.Point(442, 129);
             this.btArchivo.Name = "btArchivo";
-            this.btArchivo.Size = new System.Drawing.Size(46, 28);
+            this.btArchivo.Size = new System.Drawing.Size(34, 23);
             this.btArchivo.TabIndex = 0;
             this.btArchivo.Text = "...";
             this.btArchivo.UseVisualStyleBackColor = true;
@@ -68,10 +67,9 @@ namespace Proyecto_M3
             // btCargar
             // 
             this.btCargar.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
-            this.btCargar.Location = new System.Drawing.Point(643, 159);
-            this.btCargar.Margin = new System.Windows.Forms.Padding(4);
+            this.btCargar.Location = new System.Drawing.Point(482, 129);
             this.btCargar.Name = "btCargar";
-            this.btCargar.Size = new System.Drawing.Size(95, 28);
+            this.btCargar.Size = new System.Drawing.Size(71, 23);
             this.btCargar.TabIndex = 1;
             this.btCargar.Text = "Cargar";
             this.btCargar.UseVisualStyleBackColor = true;
@@ -80,10 +78,9 @@ namespace Proyecto_M3
             // btBuscar
             // 
             this.btBuscar.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
-            this.btBuscar.Location = new System.Drawing.Point(589, 196);
-            this.btBuscar.Margin = new System.Windows.Forms.Padding(4);
+            this.btBuscar.Location = new System.Drawing.Point(442, 159);
             this.btBuscar.Name = "btBuscar";
-            this.btBuscar.Size = new System.Drawing.Size(149, 28);
+            this.btBuscar.Size = new System.Drawing.Size(112, 23);
             this.btBuscar.TabIndex = 2;
             this.btBuscar.Text = "Buscar";
             this.btBuscar.UseVisualStyleBackColor = true;
@@ -92,10 +89,9 @@ namespace Proyecto_M3
             // btAgregar
             // 
             this.btAgregar.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
-            this.btAgregar.Location = new System.Drawing.Point(589, 233);
-            this.btAgregar.Margin = new System.Windows.Forms.Padding(4);
+            this.btAgregar.Location = new System.Drawing.Point(442, 189);
             this.btAgregar.Name = "btAgregar";
-            this.btAgregar.Size = new System.Drawing.Size(149, 28);
+            this.btAgregar.Size = new System.Drawing.Size(112, 23);
             this.btAgregar.TabIndex = 3;
             this.btAgregar.Text = "Agregar";
             this.btAgregar.UseVisualStyleBackColor = true;
@@ -105,10 +101,9 @@ namespace Proyecto_M3
             // 
             this.cbPadre.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
             this.cbPadre.FormattingEnabled = true;
-            this.cbPadre.Location = new System.Drawing.Point(163, 237);
-            this.cbPadre.Margin = new System.Windows.Forms.Padding(4);
+            this.cbPadre.Location = new System.Drawing.Point(122, 193);
             this.cbPadre.Name = "cbPadre";
-            this.cbPadre.Size = new System.Drawing.Size(203, 24);
+            this.cbPadre.Size = new System.Drawing.Size(153, 21);
             this.cbPadre.Sorted = true;
             this.cbPadre.TabIndex = 4;
             this.cbPadre.SelectedIndexChanged += new System.EventHandler(this.cbPadre_SelectedIndexChanged);
@@ -117,10 +112,9 @@ namespace Proyecto_M3
             // 
             this.cbHijo.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
             this.cbHijo.FormattingEnabled = true;
-            this.cbHijo.Location = new System.Drawing.Point(378, 237);
-            this.cbHijo.Margin = new System.Windows.Forms.Padding(4);
+            this.cbHijo.Location = new System.Drawing.Point(284, 193);
             this.cbHijo.Name = "cbHijo";
-            this.cbHijo.Size = new System.Drawing.Size(203, 24);
+            this.cbHijo.Size = new System.Drawing.Size(153, 21);
             this.cbHijo.Sorted = true;
             this.cbHijo.TabIndex = 5;
             this.cbHijo.SelectedIndexChanged += new System.EventHandler(this.cbHijo_SelectedIndexChanged_1);
@@ -130,10 +124,9 @@ namespace Proyecto_M3
             this.lbTitulo.AutoSize = true;
             this.lbTitulo.BackColor = System.Drawing.Color.Transparent;
             this.lbTitulo.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lbTitulo.Location = new System.Drawing.Point(158, 106);
-            this.lbTitulo.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            this.lbTitulo.Location = new System.Drawing.Point(118, 86);
             this.lbTitulo.Name = "lbTitulo";
-            this.lbTitulo.Size = new System.Drawing.Size(167, 20);
+            this.lbTitulo.Size = new System.Drawing.Size(137, 16);
             this.lbTitulo.TabIndex = 6;
             this.lbTitulo.Text = "Solidarity At Home";
             // 
@@ -144,10 +137,9 @@ namespace Proyecto_M3
             | System.Windows.Forms.AnchorStyles.Right)));
             this.lbArchivo.AutoSize = true;
             this.lbArchivo.BackColor = System.Drawing.Color.Transparent;
-            this.lbArchivo.Location = new System.Drawing.Point(160, 165);
-            this.lbArchivo.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            this.lbArchivo.Location = new System.Drawing.Point(120, 134);
             this.lbArchivo.Name = "lbArchivo";
-            this.lbArchivo.Size = new System.Drawing.Size(59, 17);
+            this.lbArchivo.Size = new System.Drawing.Size(46, 13);
             this.lbArchivo.TabIndex = 7;
             this.lbArchivo.Text = "Archivo:";
             // 
@@ -156,10 +148,9 @@ namespace Proyecto_M3
             this.txtArchivo.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
             this.txtArchivo.Enabled = false;
-            this.txtArchivo.Location = new System.Drawing.Point(229, 163);
-            this.txtArchivo.Margin = new System.Windows.Forms.Padding(4);
+            this.txtArchivo.Location = new System.Drawing.Point(172, 132);
             this.txtArchivo.Name = "txtArchivo";
-            this.txtArchivo.Size = new System.Drawing.Size(352, 22);
+            this.txtArchivo.Size = new System.Drawing.Size(265, 20);
             this.txtArchivo.TabIndex = 10;
             this.txtArchivo.TextChanged += new System.EventHandler(this.txtArchivo_TextChanged);
             // 
@@ -168,9 +159,10 @@ namespace Proyecto_M3
             this.pbImagen.BackColor = System.Drawing.Color.Transparent;
             this.pbImagen.Enabled = false;
             this.pbImagen.Image = ((System.Drawing.Image)(resources.GetObject("pbImagen.Image")));
-            this.pbImagen.Location = new System.Drawing.Point(163, 13);
+            this.pbImagen.Location = new System.Drawing.Point(122, 11);
+            this.pbImagen.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.pbImagen.Name = "pbImagen";
-            this.pbImagen.Size = new System.Drawing.Size(165, 90);
+            this.pbImagen.Size = new System.Drawing.Size(124, 73);
             this.pbImagen.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
             this.pbImagen.TabIndex = 11;
             this.pbImagen.TabStop = false;
@@ -181,11 +173,12 @@ namespace Proyecto_M3
             this.tbResultat.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
             | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
-            this.tbResultat.Location = new System.Drawing.Point(163, 268);
+            this.tbResultat.Location = new System.Drawing.Point(122, 218);
+            this.tbResultat.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.tbResultat.Multiline = true;
             this.tbResultat.Name = "tbResultat";
             this.tbResultat.ScrollBars = System.Windows.Forms.ScrollBars.Vertical;
-            this.tbResultat.Size = new System.Drawing.Size(575, 160);
+            this.tbResultat.Size = new System.Drawing.Size(432, 131);
             this.tbResultat.TabIndex = 12;
             this.tbResultat.TextChanged += new System.EventHandler(this.tbResultat_TextChanged);
             // 
@@ -194,10 +187,9 @@ namespace Proyecto_M3
             this.lbElementos.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
             this.lbElementos.AutoSize = true;
             this.lbElementos.BackColor = System.Drawing.Color.Transparent;
-            this.lbElementos.Location = new System.Drawing.Point(160, 216);
-            this.lbElementos.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            this.lbElementos.Location = new System.Drawing.Point(120, 176);
             this.lbElementos.Name = "lbElementos";
-            this.lbElementos.Size = new System.Drawing.Size(78, 17);
+            this.lbElementos.Size = new System.Drawing.Size(59, 13);
             this.lbElementos.TabIndex = 13;
             this.lbElementos.Text = "Elementos:";
             this.lbElementos.Click += new System.EventHandler(this.label1_Click);
@@ -207,10 +199,9 @@ namespace Proyecto_M3
             this.lbDatos.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
             this.lbDatos.AutoSize = true;
             this.lbDatos.BackColor = System.Drawing.Color.Transparent;
-            this.lbDatos.Location = new System.Drawing.Point(375, 216);
-            this.lbDatos.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            this.lbDatos.Location = new System.Drawing.Point(281, 176);
             this.lbDatos.Name = "lbDatos";
-            this.lbDatos.Size = new System.Drawing.Size(49, 17);
+            this.lbDatos.Size = new System.Drawing.Size(38, 13);
             this.lbDatos.TabIndex = 14;
             this.lbDatos.Text = "Datos:";
             // 
@@ -222,7 +213,8 @@ namespace Proyecto_M3
             this.informesM04ToolStripMenuItem});
             this.menuInformes.Location = new System.Drawing.Point(0, 0);
             this.menuInformes.Name = "menuInformes";
-            this.menuInformes.Size = new System.Drawing.Size(902, 30);
+            this.menuInformes.Padding = new System.Windows.Forms.Padding(4, 2, 0, 2);
+            this.menuInformes.Size = new System.Drawing.Size(676, 24);
             this.menuInformes.TabIndex = 15;
             this.menuInformes.Text = "menuInformes";
             // 
@@ -233,27 +225,28 @@ namespace Proyecto_M3
             this.informe2ToolStripMenuItem,
             this.informe3ToolStripMenuItem});
             this.informesM04ToolStripMenuItem.Name = "informesM04ToolStripMenuItem";
-            this.informesM04ToolStripMenuItem.Size = new System.Drawing.Size(124, 24);
+            this.informesM04ToolStripMenuItem.Size = new System.Drawing.Size(100, 20);
             this.informesM04ToolStripMenuItem.Text = "Informes - M04";
             this.informesM04ToolStripMenuItem.Click += new System.EventHandler(this.informesM04ToolStripMenuItem_Click);
             // 
             // informe1ToolStripMenuItem
             // 
             this.informe1ToolStripMenuItem.Name = "informe1ToolStripMenuItem";
-            this.informe1ToolStripMenuItem.Size = new System.Drawing.Size(224, 26);
+            this.informe1ToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
             this.informe1ToolStripMenuItem.Text = "Informe 1";
             this.informe1ToolStripMenuItem.Click += new System.EventHandler(this.informe1ToolStripMenuItem_Click);
             // 
             // informe2ToolStripMenuItem
             // 
             this.informe2ToolStripMenuItem.Name = "informe2ToolStripMenuItem";
-            this.informe2ToolStripMenuItem.Size = new System.Drawing.Size(224, 26);
+            this.informe2ToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
             this.informe2ToolStripMenuItem.Text = "Informe 2";
+            this.informe2ToolStripMenuItem.Click += new System.EventHandler(this.informe2ToolStripMenuItem_Click);
             // 
             // informe3ToolStripMenuItem
             // 
             this.informe3ToolStripMenuItem.Name = "informe3ToolStripMenuItem";
-            this.informe3ToolStripMenuItem.Size = new System.Drawing.Size(224, 26);
+            this.informe3ToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
             this.informe3ToolStripMenuItem.Text = "Informe 3";
             // 
             // nombre_grupo
@@ -262,19 +255,18 @@ namespace Proyecto_M3
             this.nombre_grupo.AutoSize = true;
             this.nombre_grupo.BackColor = System.Drawing.Color.Transparent;
             this.nombre_grupo.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.nombre_grupo.Location = new System.Drawing.Point(684, 0);
-            this.nombre_grupo.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            this.nombre_grupo.Location = new System.Drawing.Point(513, 0);
             this.nombre_grupo.Name = "nombre_grupo";
-            this.nombre_grupo.Size = new System.Drawing.Size(195, 20);
+            this.nombre_grupo.Size = new System.Drawing.Size(160, 16);
             this.nombre_grupo.TabIndex = 16;
             this.nombre_grupo.Text = "SubTropical - Grupo 8";
             this.nombre_grupo.Click += new System.EventHandler(this.label1_Click_1);
             // 
             // formularioMain
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(902, 459);
+            this.ClientSize = new System.Drawing.Size(676, 373);
             this.Controls.Add(this.nombre_grupo);
             this.Controls.Add(this.lbDatos);
             this.Controls.Add(this.lbElementos);
@@ -290,7 +282,6 @@ namespace Proyecto_M3
             this.Controls.Add(this.btCargar);
             this.Controls.Add(this.btArchivo);
             this.Controls.Add(this.menuInformes);
-            this.Margin = new System.Windows.Forms.Padding(4);
             this.Name = "formularioMain";
             this.Text = "Solidarity At Home - Subtropical";
             this.Load += new System.EventHandler(this.formularioMain_Load);
