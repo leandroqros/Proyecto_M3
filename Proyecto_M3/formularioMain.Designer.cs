@@ -103,7 +103,6 @@ namespace Proyecto_M3
             // 
             // cbPadre
             // 
-            this.cbPadre.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
             this.cbPadre.FormattingEnabled = true;
             this.cbPadre.Location = new System.Drawing.Point(183, 297);
             this.cbPadre.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
@@ -115,7 +114,9 @@ namespace Proyecto_M3
             // 
             // cbHijo
             // 
-            this.cbHijo.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
+            this.cbHijo.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
             this.cbHijo.FormattingEnabled = true;
             this.cbHijo.Location = new System.Drawing.Point(426, 297);
             this.cbHijo.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
@@ -191,7 +192,9 @@ namespace Proyecto_M3
             // 
             // lbElementos
             // 
-            this.lbElementos.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
+            this.lbElementos.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
             this.lbElementos.AutoSize = true;
             this.lbElementos.BackColor = System.Drawing.Color.Transparent;
             this.lbElementos.Location = new System.Drawing.Point(180, 271);
@@ -204,7 +207,9 @@ namespace Proyecto_M3
             // 
             // lbDatos
             // 
-            this.lbDatos.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
+            this.lbDatos.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
             this.lbDatos.AutoSize = true;
             this.lbDatos.BackColor = System.Drawing.Color.Transparent;
             this.lbDatos.Location = new System.Drawing.Point(422, 271);
@@ -224,7 +229,7 @@ namespace Proyecto_M3
             this.menuInformes.Location = new System.Drawing.Point(0, 0);
             this.menuInformes.Name = "menuInformes";
             this.menuInformes.Padding = new System.Windows.Forms.Padding(6, 3, 0, 3);
-            this.menuInformes.Size = new System.Drawing.Size(1014, 35);
+            this.menuInformes.Size = new System.Drawing.Size(1014, 36);
             this.menuInformes.TabIndex = 15;
             this.menuInformes.Text = "menuInformes";
             // 
@@ -242,21 +247,21 @@ namespace Proyecto_M3
             // informe1ToolStripMenuItem
             // 
             this.informe1ToolStripMenuItem.Name = "informe1ToolStripMenuItem";
-            this.informe1ToolStripMenuItem.Size = new System.Drawing.Size(270, 34);
+            this.informe1ToolStripMenuItem.Size = new System.Drawing.Size(192, 34);
             this.informe1ToolStripMenuItem.Text = "Informe 1";
             this.informe1ToolStripMenuItem.Click += new System.EventHandler(this.informe1ToolStripMenuItem_Click);
             // 
             // informe2ToolStripMenuItem
             // 
             this.informe2ToolStripMenuItem.Name = "informe2ToolStripMenuItem";
-            this.informe2ToolStripMenuItem.Size = new System.Drawing.Size(270, 34);
+            this.informe2ToolStripMenuItem.Size = new System.Drawing.Size(192, 34);
             this.informe2ToolStripMenuItem.Text = "Informe 2";
             this.informe2ToolStripMenuItem.Click += new System.EventHandler(this.informe2ToolStripMenuItem_Click);
             // 
             // informe3ToolStripMenuItem
             // 
             this.informe3ToolStripMenuItem.Name = "informe3ToolStripMenuItem";
-            this.informe3ToolStripMenuItem.Size = new System.Drawing.Size(270, 34);
+            this.informe3ToolStripMenuItem.Size = new System.Drawing.Size(192, 34);
             this.informe3ToolStripMenuItem.Text = "Informe 3";
             this.informe3ToolStripMenuItem.Click += new System.EventHandler(this.informe3ToolStripMenuItem_Click);
             // 
@@ -295,6 +300,7 @@ namespace Proyecto_M3
             this.Controls.Add(this.btArchivo);
             this.Controls.Add(this.menuInformes);
             this.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
+            this.MinimumSize = new System.Drawing.Size(1036, 630);
             this.Name = "formularioMain";
             this.Text = "Solidarity At Home - Subtropical";
             this.Load += new System.EventHandler(this.formularioMain_Load);
