@@ -276,7 +276,7 @@ namespace Proyecto_M3
         {
             string SEPARADOR = "----------------------------------";
 
-            string elementName, elementData, linia, deliveryNote_actual, deliveryDate_actual, hostName_actual, price_actual, hostName_refugee;
+            string elementName, elementData, linia, deliveryNote_actual, deliveryDate_actual, hostName_actual, price_actual, hostName_refugee, arxiu;
             bool foodsDelivered_okey, foodDelivered_okey, hosts_okey;
 
             linia = "  ";
@@ -285,6 +285,11 @@ namespace Proyecto_M3
             foodDelivered_okey = false;
             hosts_okey = false;
             hostName_refugee = "";
+
+            arxiu = Environment.GetFolderPath(System.Environment.SpecialFolder.MyDocuments) + @"\Dades_XML";
+            Directory.CreateDirectory(arxiu);
+
+            arxiu += @"\dades.txt";
 
             if (hay_archivo)
             {
@@ -296,7 +301,7 @@ namespace Proyecto_M3
                 {
                     using (StreamReader sr = new StreamReader(nom_arxiu))
                     {
-                        using (FileStream fs = new FileStream("dades.txt", FileMode.Create, FileAccess.ReadWrite))
+                        using (FileStream fs = new FileStream(arxiu, FileMode.Create, FileAccess.ReadWrite))
                         {
                             fs.Seek(0, SeekOrigin.End);
 
@@ -412,10 +417,15 @@ namespace Proyecto_M3
                                                     if (elementData == cbHijo.Text)
                                                     {
                                                         tbResultat.AppendText(SEPARADOR + "\r\n");
+                                                        sw.WriteLine(SEPARADOR);
                                                         tbResultat.AppendText("DELIVERY NOTE: " + deliveryNote_actual + "\r\n");
+                                                        sw.WriteLine("DELIVERY NOTE: " + deliveryNote_actual);
                                                         tbResultat.AppendText("DELIVERY DATE: " + deliveryDate_actual + "\r\n");
+                                                        sw.WriteLine("TOTAL COST: " + price_actual);
                                                         tbResultat.AppendText("TOTAL COST: " + price_actual + "\r\n");
+                                                        sw.WriteLine("TOTAL COST: " + price_actual);
                                                         tbResultat.AppendText(SEPARADOR + "\r\n");
+                                                        sw.WriteLine(SEPARADOR);
 
                                                         foodDelivered_okey = false;
                                                     }
@@ -514,10 +524,15 @@ namespace Proyecto_M3
                                             if (hostName_actual == hostName_refugee)
                                             {
                                                 tbResultat.AppendText(SEPARADOR + "\r\n");
+                                                sw.WriteLine(SEPARADOR);
                                                 tbResultat.AppendText("DELIVERY NOTE: " + deliveryNote_actual + "\r\n");
+                                                sw.WriteLine("DELIVERY NOTE: " + deliveryNote_actual);
                                                 tbResultat.AppendText("DELIVERY DATE: " + deliveryDate_actual + "\r\n");
+                                                sw.WriteLine("DELIVERY DATE: " + deliveryDate_actual);
                                                 tbResultat.AppendText("TOTAL COST: " + price_actual + "\r\n");
+                                                sw.WriteLine("TOTAL COST: " + price_actual);
                                                 tbResultat.AppendText(SEPARADOR + "\r\n");
+                                                sw.WriteLine(SEPARADOR);
                                             }
                                         }
                                         if (linia == "</FoodsDelivered>")
@@ -561,10 +576,15 @@ namespace Proyecto_M3
                                             if (cbHijo.Text == deliveryNote_actual)
                                             {
                                                 tbResultat.AppendText(SEPARADOR + "\r\n");
+                                                sw.WriteLine(SEPARADOR);
                                                 tbResultat.AppendText("DELIVERY NOTE: " + deliveryNote_actual + "\r\n");
+                                                sw.WriteLine("DELIVERY NOTE: " + deliveryNote_actual);
                                                 tbResultat.AppendText("DELIVERY DATE: " + deliveryDate_actual + "\r\n");
+                                                sw.WriteLine("DELIVERY DATE: " + deliveryDate_actual);
                                                 tbResultat.AppendText("TOTAL COST: " + price_actual + "\r\n");
+                                                sw.WriteLine("TOTAL COST: " + price_actual);
                                                 tbResultat.AppendText(SEPARADOR + "\r\n");
+                                                sw.WriteLine(SEPARADOR);
                                             }
                                         }
                                         if (linia == "</FoodsDelivered>")
