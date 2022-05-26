@@ -1,7 +1,7 @@
 ﻿
 namespace Proyecto_M3
 {
-    partial class formulario_Informe1
+    partial class formulario_Informe3
     {
         /// <summary>
         /// Required designer variable.
@@ -30,7 +30,7 @@ namespace Proyecto_M3
         private void InitializeComponent()
         {
             this.crystalReportViewer1 = new CrystalDecisions.Windows.Forms.CrystalReportViewer();
-            this.CrystalReport11 = new Proyecto_M3.Informe1();
+            this.Informe31 = new Proyecto_M3.Informe3();
             this.SuspendLayout();
             // 
             // crystalReportViewer1
@@ -38,25 +38,21 @@ namespace Proyecto_M3
             this.crystalReportViewer1.ActiveViewIndex = 0;
             this.crystalReportViewer1.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.crystalReportViewer1.Cursor = System.Windows.Forms.Cursors.Default;
-            this.crystalReportViewer1.DisplayStatusBar = false;
             this.crystalReportViewer1.Dock = System.Windows.Forms.DockStyle.Fill;
             this.crystalReportViewer1.Location = new System.Drawing.Point(0, 0);
-            this.crystalReportViewer1.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.crystalReportViewer1.Name = "crystalReportViewer1";
-            this.crystalReportViewer1.ReportSource = this.CrystalReport11;
-            this.crystalReportViewer1.Size = new System.Drawing.Size(900, 562);
+            this.crystalReportViewer1.ReportSource = this.Informe31;
+            this.crystalReportViewer1.Size = new System.Drawing.Size(800, 450);
             this.crystalReportViewer1.TabIndex = 0;
-            this.crystalReportViewer1.ToolPanelWidth = 225;
             // 
-            // formulario_Informe1
+            // formulario_Informe3
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(9F, 20F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(900, 562);
+            this.ClientSize = new System.Drawing.Size(800, 450);
             this.Controls.Add(this.crystalReportViewer1);
-            this.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
-            this.Name = "formulario_Informe1";
-            this.Text = "Form1";
+            this.Name = "formulario_Informe3";
+            this.Text = "formulario_Informe3";
             this.ResumeLayout(false);
 
         }
@@ -64,6 +60,6 @@ namespace Proyecto_M3
         #endregion
 
         private CrystalDecisions.Windows.Forms.CrystalReportViewer crystalReportViewer1;
-        private Informe1 CrystalReport11;
+        private Informe3 Informe31;
     }
 }
