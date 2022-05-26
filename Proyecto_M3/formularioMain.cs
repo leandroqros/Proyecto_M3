@@ -64,11 +64,6 @@ namespace Proyecto_M3
 
         }
 
-        private void tbResultat_TextChanged(object sender, EventArgs e)
-        {
-
-        }
-
         private void btCargar_Click(object sender, EventArgs e)
         {
             cbPadre.Items.Clear();
@@ -649,6 +644,11 @@ namespace Proyecto_M3
             formulario_Informe3 informe3 = new formulario_Informe3();
 
             informe3.Show();
+        }
+
+        private void tbResultat_TextChanged_1(object sender, EventArgs e)
+        {
+
         }
     }
 }

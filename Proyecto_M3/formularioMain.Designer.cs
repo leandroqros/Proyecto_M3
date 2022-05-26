@@ -40,7 +40,6 @@ namespace Proyecto_M3
             this.lbArchivo = new System.Windows.Forms.Label();
             this.txtArchivo = new System.Windows.Forms.TextBox();
             this.pbImagen = new System.Windows.Forms.PictureBox();
-            this.tbResultat = new System.Windows.Forms.TextBox();
             this.lbElementos = new System.Windows.Forms.Label();
             this.lbDatos = new System.Windows.Forms.Label();
             this.menuInformes = new System.Windows.Forms.MenuStrip();
@@ -49,6 +48,7 @@ namespace Proyecto_M3
             this.informe2ToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.informe3ToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.nombre_grupo = new System.Windows.Forms.Label();
+            this.tbResultat = new System.Windows.Forms.RichTextBox();
             ((System.ComponentModel.ISupportInitialize)(this.pbImagen)).BeginInit();
             this.menuInformes.SuspendLayout();
             this.SuspendLayout();
@@ -177,19 +177,6 @@ namespace Proyecto_M3
             this.pbImagen.TabStop = false;
             this.pbImagen.Click += new System.EventHandler(this.pictureBox1_Click);
             // 
-            // tbResultat
-            // 
-            this.tbResultat.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
-            | System.Windows.Forms.AnchorStyles.Left) 
-            | System.Windows.Forms.AnchorStyles.Right)));
-            this.tbResultat.Location = new System.Drawing.Point(183, 335);
-            this.tbResultat.Multiline = true;
-            this.tbResultat.Name = "tbResultat";
-            this.tbResultat.ScrollBars = System.Windows.Forms.ScrollBars.Vertical;
-            this.tbResultat.Size = new System.Drawing.Size(646, 199);
-            this.tbResultat.TabIndex = 12;
-            this.tbResultat.TextChanged += new System.EventHandler(this.tbResultat_TextChanged);
-            // 
             // lbElementos
             // 
             this.lbElementos.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
@@ -240,7 +227,7 @@ namespace Proyecto_M3
             this.informe2ToolStripMenuItem,
             this.informe3ToolStripMenuItem});
             this.informesM04ToolStripMenuItem.Name = "informesM04ToolStripMenuItem";
-            this.informesM04ToolStripMenuItem.Size = new System.Drawing.Size(152, 29);
+            this.informesM04ToolStripMenuItem.Size = new System.Drawing.Size(152, 30);
             this.informesM04ToolStripMenuItem.Text = "Informes - M04";
             this.informesM04ToolStripMenuItem.Click += new System.EventHandler(this.informesM04ToolStripMenuItem_Click);
             // 
@@ -279,15 +266,28 @@ namespace Proyecto_M3
             this.nombre_grupo.Text = "SubTropical - Grupo 6";
             this.nombre_grupo.Click += new System.EventHandler(this.label1_Click_1);
             // 
+            // tbResultat
+            // 
+            this.tbResultat.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
+            this.tbResultat.Location = new System.Drawing.Point(184, 334);
+            this.tbResultat.Name = "tbResultat";
+            this.tbResultat.ReadOnly = true;
+            this.tbResultat.Size = new System.Drawing.Size(647, 199);
+            this.tbResultat.TabIndex = 17;
+            this.tbResultat.Text = "";
+            this.tbResultat.TextChanged += new System.EventHandler(this.tbResultat_TextChanged_1);
+            // 
             // formularioMain
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(9F, 20F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(1014, 574);
+            this.Controls.Add(this.tbResultat);
             this.Controls.Add(this.nombre_grupo);
             this.Controls.Add(this.lbDatos);
             this.Controls.Add(this.lbElementos);
-            this.Controls.Add(this.tbResultat);
             this.Controls.Add(this.pbImagen);
             this.Controls.Add(this.txtArchivo);
             this.Controls.Add(this.lbArchivo);
@@ -324,7 +324,6 @@ namespace Proyecto_M3
         private System.Windows.Forms.Label lbArchivo;
         private System.Windows.Forms.TextBox txtArchivo;
         private System.Windows.Forms.PictureBox pbImagen;
-        private System.Windows.Forms.TextBox tbResultat;
         private System.Windows.Forms.Label lbElementos;
         private System.Windows.Forms.Label lbDatos;
         private System.Windows.Forms.MenuStrip menuInformes;
@@ -333,6 +332,7 @@ namespace Proyecto_M3
         private System.Windows.Forms.ToolStripMenuItem informe2ToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem informe3ToolStripMenuItem;
         private System.Windows.Forms.Label nombre_grupo;
+        private System.Windows.Forms.RichTextBox tbResultat;
     }
 }
 
