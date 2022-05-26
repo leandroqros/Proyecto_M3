@@ -19,7 +19,7 @@ namespace Proyecto_M3
         List<string> FullName_Refugees = new List<string>();
         List<string> DeliveryNote_FoodsDelivered = new List<string>();
         string nom_arxiu;
-        bool hay_archivo;
+        bool hay_archivo, agregarActivat;
 
         public formularioMain()
         {
@@ -301,6 +301,15 @@ namespace Proyecto_M3
                 {
                     using (StreamReader sr = new StreamReader(nom_arxiu))
                     {
+
+                        if (agregarActivat)
+                        {
+
+                        }
+                        else
+                        {
+
+                        }
                         using (FileStream fs = new FileStream(arxiu, FileMode.Create, FileAccess.ReadWrite))
                         {
                             fs.Seek(0, SeekOrigin.End);
@@ -634,7 +643,18 @@ namespace Proyecto_M3
 
         private void btAgregar_Click(object sender, EventArgs e)
         {
-            tbResultat.Clear();
+            if (agregarActivat)
+            {
+                agregarActivat = false;
+                btAgregar.BackColor = Color.GreenYellow;
+            }
+            else
+            {
+                agregarActivat = true;
+                btAgregar.BackColor = Color.Gainsboro;
+            }
+
+
         }
 
         private void label1_Click_1(object sender, EventArgs e)
