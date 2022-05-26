@@ -267,14 +267,10 @@ namespace Proyecto_M3
             return elementData;
         }
 
-        private void cbHijo_SelectedIndexChanged(object sender, EventArgs e)
-        {
-
-        }
-
         private void btBuscar_Click(object sender, EventArgs e)
         {
             string SEPARADOR = "----------------------------------";
+            string SEPARADOR2 = "**********************************";
 
             string elementName, elementData, linia, deliveryNote_actual, deliveryDate_actual, hostName_actual, price_actual, hostName_refugee, arxiu;
             bool foodsDelivered_okey, foodDelivered_okey, hosts_okey;
@@ -302,21 +298,20 @@ namespace Proyecto_M3
                     using (StreamReader sr = new StreamReader(nom_arxiu))
                     {
 
-                        if (agregarActivat)
+                        if (!agregarActivat)
                         {
-
+                            File.Delete(arxiu);
                         }
-                        else
-                        {
 
-                        }
-                        using (FileStream fs = new FileStream(arxiu, FileMode.Create, FileAccess.ReadWrite))
+                        using (FileStream fs = new FileStream(arxiu, FileMode.OpenOrCreate, FileAccess.ReadWrite))
                         {
                             fs.Seek(0, SeekOrigin.End);
 
                             StreamWriter sw = new StreamWriter(fs);
 
                             tbResultat.Clear();
+                            tbResultat.AppendText(SEPARADOR2 + "\r\n");
+                            sw.WriteLine(SEPARADOR2);
                             tbResultat.AppendText("START SEARCH" + "\r\n");
                             sw.WriteLine("START SEARCH");
                             sw.WriteLine(SEPARADOR);
@@ -607,8 +602,8 @@ namespace Proyecto_M3
                             }
                             tbResultat.AppendText("END SEARCH" + "\r\n");
                             sw.WriteLine("END SEARCH");
-                            tbResultat.AppendText(SEPARADOR + "\r\n");
-                            sw.WriteLine(SEPARADOR);
+                            tbResultat.AppendText(SEPARADOR2 + "\r\n");
+                            sw.WriteLine(SEPARADOR2);
 
                             sr.Close();
                             sw.Close();
@@ -646,12 +641,13 @@ namespace Proyecto_M3
             if (agregarActivat)
             {
                 agregarActivat = false;
-                btAgregar.BackColor = Color.GreenYellow;
+                btAgregar.BackColor = Color.Gainsboro;
             }
             else
             {
                 agregarActivat = true;
-                btAgregar.BackColor = Color.Gainsboro;
+                
+                btAgregar.BackColor = Color.GreenYellow;
             }
 
 
