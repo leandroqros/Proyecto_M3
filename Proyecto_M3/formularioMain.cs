@@ -618,5 +618,10 @@ namespace Proyecto_M3
         {
             tbResultat.Clear();
         }
+
+        private void label1_Click_1(object sender, EventArgs e)
+        {
+
+        }
     }
 }

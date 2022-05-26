@@ -48,6 +48,7 @@ namespace Proyecto_M3
             this.informe1ToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.informe2ToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.informe3ToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.nombre_grupo = new System.Windows.Forms.Label();
             ((System.ComponentModel.ISupportInitialize)(this.pbImagen)).BeginInit();
             this.menuInformes.SuspendLayout();
             this.SuspendLayout();
@@ -102,6 +103,7 @@ namespace Proyecto_M3
             // 
             // cbPadre
             // 
+            this.cbPadre.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
             this.cbPadre.FormattingEnabled = true;
             this.cbPadre.Location = new System.Drawing.Point(163, 237);
             this.cbPadre.Margin = new System.Windows.Forms.Padding(4);
@@ -113,7 +115,7 @@ namespace Proyecto_M3
             // 
             // cbHijo
             // 
-            this.cbHijo.Anchor = System.Windows.Forms.AnchorStyles.Top;
+            this.cbHijo.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
             this.cbHijo.FormattingEnabled = true;
             this.cbHijo.Location = new System.Drawing.Point(378, 237);
             this.cbHijo.Margin = new System.Windows.Forms.Padding(4);
@@ -137,6 +139,9 @@ namespace Proyecto_M3
             // 
             // lbArchivo
             // 
+            this.lbArchivo.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
             this.lbArchivo.AutoSize = true;
             this.lbArchivo.BackColor = System.Drawing.Color.Transparent;
             this.lbArchivo.Location = new System.Drawing.Point(160, 165);
@@ -251,11 +256,26 @@ namespace Proyecto_M3
             this.informe3ToolStripMenuItem.Size = new System.Drawing.Size(224, 26);
             this.informe3ToolStripMenuItem.Text = "Informe 3";
             // 
+            // nombre_grupo
+            // 
+            this.nombre_grupo.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
+            this.nombre_grupo.AutoSize = true;
+            this.nombre_grupo.BackColor = System.Drawing.Color.Transparent;
+            this.nombre_grupo.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.nombre_grupo.Location = new System.Drawing.Point(684, 0);
+            this.nombre_grupo.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            this.nombre_grupo.Name = "nombre_grupo";
+            this.nombre_grupo.Size = new System.Drawing.Size(195, 20);
+            this.nombre_grupo.TabIndex = 16;
+            this.nombre_grupo.Text = "SubTropical - Grupo 8";
+            this.nombre_grupo.Click += new System.EventHandler(this.label1_Click_1);
+            // 
             // formularioMain
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(902, 459);
+            this.Controls.Add(this.nombre_grupo);
             this.Controls.Add(this.lbDatos);
             this.Controls.Add(this.lbElementos);
             this.Controls.Add(this.tbResultat);
@@ -302,6 +322,7 @@ namespace Proyecto_M3
         private System.Windows.Forms.ToolStripMenuItem informe1ToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem informe2ToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem informe3ToolStripMenuItem;
+        private System.Windows.Forms.Label nombre_grupo;
     }
 }
 
