@@ -19,7 +19,7 @@ namespace Proyecto_M3
         List<string> FullName_Refugees = new List<string>();
         List<string> DeliveryNote_FoodsDelivered = new List<string>();
         string nom_arxiu;
-        bool hay_archivo;
+        bool hay_archivo, agregarActivat;
 
         public formularioMain()
         {
@@ -64,11 +64,6 @@ namespace Proyecto_M3
 
         }
 
-        private void tbResultat_TextChanged(object sender, EventArgs e)
-        {
-
-        }
-
         private void btCargar_Click(object sender, EventArgs e)
         {
             cbPadre.Items.Clear();
@@ -81,11 +76,12 @@ namespace Proyecto_M3
             guardarFullName_Hosts = false;
             guardarFullName_Refugees = false;
             guardarDescFood_Foods = false;
-            if (hay_archivo == true)
+
+            if (hay_archivo)
             {
                 using (StreamReader sr = new StreamReader(nom_arxiu))
                 {
-                    if (categorias.Count < 4)
+                    if (categorias.Count <= cbPadre.Items.Count)
                     {
 
                         while (linia != "</SolidarityAtHome>")
@@ -125,7 +121,7 @@ namespace Proyecto_M3
 
                             }
 
-                            if (elementName == "Refugee")
+                            if (elementName == "Refugees")
                             {
                                 guardarFullName_Refugees = true;
                             }
@@ -134,6 +130,11 @@ namespace Proyecto_M3
                             {
                                 elementData = GetElementData(linia);
                                 FullName_Refugees.Add(elementData);
+                                
+                            }
+
+                            if (elementName == "/Refugees" && guardarFullName_Refugees)
+                            {
                                 guardarFullName_Refugees = false;
                             }
 
@@ -147,17 +148,20 @@ namespace Proyecto_M3
 
                             elementName = GetElementName(linia);
                         }
+
+                        categorias.Remove("SolidarityAtHome");
+
+                        for (int i = 0; i < categorias.Count; i++)
+                        {
+                            cbPadre.Items.Add(categorias[i]);
+                        }
                     }
                 }
             }
-            categorias.Remove("SolidarityAtHome");
-
-            for (int i = 0; i < categorias.Count; i++)
+            else
             {
-                cbPadre.Items.Add(categorias[i]);
+                MessageBox.Show("Es necessario seleccionar un archivo.");
             }
-
-
         }
 
         private void cbPadre_SelectedIndexChanged(object sender, EventArgs e)
@@ -263,7 +267,422 @@ namespace Proyecto_M3
             return elementData;
         }
 
-        private void cbHijo_SelectedIndexChanged(object sender, EventArgs e)
+        private void btBuscar_Click(object sender, EventArgs e)
+        {
+            string SEPARADOR = "----------------------------------";
+            string SEPARADOR2 = "**********************************";
+
+            string elementName, elementData, linia, deliveryNote_actual, deliveryDate_actual, hostName_actual, price_actual, hostName_refugee, arxiu;
+            bool foodsDelivered_okey, foodDelivered_okey, hosts_okey;
+
+            linia = "  ";
+            elementName = "";
+            foodsDelivered_okey = false;
+            foodDelivered_okey = false;
+            hosts_okey = false;
+            hostName_refugee = "";
+
+            arxiu = Environment.GetFolderPath(System.Environment.SpecialFolder.MyDocuments) + @"\Dades_XML";
+            Directory.CreateDirectory(arxiu);
+
+            arxiu += @"\dades.txt";
+
+            if (hay_archivo)
+            {
+                if (cbPadre.Text == "" || cbHijo.Text == "")
+                {
+                    MessageBox.Show("Tienen que seleccionar datos en los campos de 'Elementos' y 'Datos'.");
+                }
+                else
+                {
+                    using (StreamReader sr = new StreamReader(nom_arxiu))
+                    {
+
+                        if (!agregarActivat)
+                        {
+                            File.Delete(arxiu);
+                        }
+
+                        using (FileStream fs = new FileStream(arxiu, FileMode.OpenOrCreate, FileAccess.ReadWrite))
+                        {
+                            fs.Seek(0, SeekOrigin.End);
+
+                            StreamWriter sw = new StreamWriter(fs);
+
+                            tbResultat.Clear();
+                            tbResultat.AppendText(SEPARADOR2 + "\r\n");
+                            sw.WriteLine(SEPARADOR2);
+                            tbResultat.AppendText("START SEARCH" + "\r\n");
+                            sw.WriteLine("START SEARCH");
+                            sw.WriteLine(SEPARADOR);
+                            sw.WriteLine("CATEGORIA: " + cbPadre.Text);
+                            sw.WriteLine("ELEMENT: " + cbHijo.Text);
+                            switch (cbPadre.Text)
+                            {
+                                case "Hosts":
+
+                                    while (linia != "<FoodsDelivered>")
+                                    {
+                                        linia = sr.ReadLine();
+                                    }
+
+                                    foodsDelivered_okey = true;
+
+                                    while (foodsDelivered_okey)
+                                    {
+                                        linia = sr.ReadLine();
+                                        elementName = GetElementName(linia);
+
+                                        if (elementName == "FoodDelivered")
+                                        {
+
+                                            linia = sr.ReadLine();
+
+                                            deliveryNote_actual = GetElementData(linia);
+
+                                            linia = sr.ReadLine();
+
+                                            deliveryDate_actual = GetElementData(linia);
+
+                                            linia = sr.ReadLine();
+
+                                            hostName_actual = GetElementData(linia);
+
+                                            linia = sr.ReadLine();
+
+                                            price_actual = GetElementData(linia);
+
+                                            if (cbHijo.Text == hostName_actual)
+                                            {
+
+                                                tbResultat.AppendText(SEPARADOR + "\r\n");
+                                                sw.WriteLine(SEPARADOR);
+                                                tbResultat.AppendText("DELIVERY NOTE: " + deliveryNote_actual + "\r\n");
+                                                sw.WriteLine("DELIVERY NOTE: " + deliveryNote_actual);
+                                                tbResultat.AppendText("DELIVERY DATE: " + deliveryDate_actual + "\r\n");
+                                                sw.WriteLine("DELIVERY DATE: " + deliveryDate_actual);
+                                                tbResultat.AppendText("TOTAL COST: " + price_actual + "\r\n");
+                                                sw.WriteLine("TOTAL COST: " + price_actual);
+                                                tbResultat.AppendText(SEPARADOR + "\r\n");
+                                                sw.WriteLine(SEPARADOR);
+                                            }
+
+                                        }
+                                        if (linia == "</FoodsDelivered>")
+                                        {
+                                            foodsDelivered_okey = false;
+                                        }
+
+                                    }
+
+                                    break;
+
+                                case "Foods":
+
+                                    while (linia != "<FoodsDelivered>")
+                                    {
+                                        linia = sr.ReadLine();
+                                    }
+
+                                    foodsDelivered_okey = true;
+
+                                    while (foodsDelivered_okey)
+                                    {
+                                        linia = sr.ReadLine();
+                                        elementName = GetElementName(linia);
+
+                                        if (elementName == "FoodDelivered")
+                                        {
+                                            foodDelivered_okey = true;
+
+                                            linia = sr.ReadLine();
+
+                                            deliveryNote_actual = GetElementData(linia);
+
+                                            linia = sr.ReadLine();
+
+                                            deliveryDate_actual = GetElementData(linia);
+
+                                            linia = sr.ReadLine();
+                                            linia = sr.ReadLine();
+
+                                            price_actual = GetElementData(linia);
+
+                                            while (foodDelivered_okey)
+                                            {
+                                                linia = sr.ReadLine();
+
+                                                elementName = GetElementName(linia);
+
+
+                                                if (elementName == "DescFood")
+                                                {
+                                                    elementData = GetElementData(linia);
+                                                    if (elementData == cbHijo.Text)
+                                                    {
+                                                        tbResultat.AppendText(SEPARADOR + "\r\n");
+                                                        sw.WriteLine(SEPARADOR);
+                                                        tbResultat.AppendText("DELIVERY NOTE: " + deliveryNote_actual + "\r\n");
+                                                        sw.WriteLine("DELIVERY NOTE: " + deliveryNote_actual);
+                                                        tbResultat.AppendText("DELIVERY DATE: " + deliveryDate_actual + "\r\n");
+                                                        sw.WriteLine("TOTAL COST: " + price_actual);
+                                                        tbResultat.AppendText("TOTAL COST: " + price_actual + "\r\n");
+                                                        sw.WriteLine("TOTAL COST: " + price_actual);
+                                                        tbResultat.AppendText(SEPARADOR + "\r\n");
+                                                        sw.WriteLine(SEPARADOR);
+
+                                                        foodDelivered_okey = false;
+                                                    }
+                                                }
+                                                if (GetElementName(linia) == "/Items")
+                                                {
+                                                    foodDelivered_okey = false;
+                                                }
+                                            }
+                                        }
+                                        if (linia == "</FoodsDelivered>")
+                                        {
+                                            foodsDelivered_okey = false;
+                                        }
+                                    }
+
+
+                                    break;
+
+                                case "Refugees":
+
+                                    while (linia != "<Hosts>")
+                                    {
+                                        linia = sr.ReadLine();
+                                    }
+
+                                    hosts_okey = true;
+
+                                    while (hosts_okey)
+                                    {
+                                        linia = sr.ReadLine();
+                                        elementName = GetElementName(linia);
+
+                                        if (elementName == "Host")
+                                        {
+                                            linia = sr.ReadLine();
+
+                                            hostName_actual = GetElementData(linia);
+
+                                            elementName = GetElementName(linia);
+
+                                            while (elementName != "/Host")
+                                            {
+
+                                                if (elementName == "FullName")
+                                                {
+                                                    elementData = GetElementData(linia);
+                                                    if (elementData == cbHijo.Text)
+                                                    {
+                                                        hostName_refugee = hostName_actual;
+                                                        hosts_okey = false;
+                                                    }
+                                                }
+
+                                                linia = sr.ReadLine();
+                                                elementName = GetElementName(linia);
+                                            }
+                                        }
+                                        if (elementName == "/Hosts")
+                                        {
+                                            hosts_okey = false;
+                                        }
+                                    }
+
+                                    while (linia != "<FoodsDelivered>")
+                                    {
+                                        linia = sr.ReadLine();
+                                    }
+
+                                    foodsDelivered_okey = true;
+
+                                    while (foodsDelivered_okey)
+                                    {
+                                        linia = sr.ReadLine();
+                                        elementName = GetElementName(linia);
+
+                                        if (elementName == "FoodDelivered")
+                                        {
+
+                                            linia = sr.ReadLine();
+
+                                            deliveryNote_actual = GetElementData(linia);
+
+                                            linia = sr.ReadLine();
+
+                                            deliveryDate_actual = GetElementData(linia);
+
+                                            linia = sr.ReadLine();
+
+                                            hostName_actual = GetElementData(linia);
+
+                                            linia = sr.ReadLine();
+
+                                            price_actual = GetElementData(linia);
+
+                                            if (hostName_actual == hostName_refugee)
+                                            {
+                                                tbResultat.AppendText(SEPARADOR + "\r\n");
+                                                sw.WriteLine(SEPARADOR);
+                                                tbResultat.AppendText("DELIVERY NOTE: " + deliveryNote_actual + "\r\n");
+                                                sw.WriteLine("DELIVERY NOTE: " + deliveryNote_actual);
+                                                tbResultat.AppendText("DELIVERY DATE: " + deliveryDate_actual + "\r\n");
+                                                sw.WriteLine("DELIVERY DATE: " + deliveryDate_actual);
+                                                tbResultat.AppendText("TOTAL COST: " + price_actual + "\r\n");
+                                                sw.WriteLine("TOTAL COST: " + price_actual);
+                                                tbResultat.AppendText(SEPARADOR + "\r\n");
+                                                sw.WriteLine(SEPARADOR);
+                                            }
+                                        }
+                                        if (linia == "</FoodsDelivered>")
+                                        {
+                                            foodsDelivered_okey = false;
+                                        }
+                                    }
+
+                                    break;
+
+                                case "FoodsDelivered":
+
+                                    while (linia != "<FoodsDelivered>")
+                                    {
+                                        linia = sr.ReadLine();
+                                    }
+
+                                    foodsDelivered_okey = true;
+
+                                    while (foodsDelivered_okey)
+                                    {
+                                        linia = sr.ReadLine();
+                                        elementName = GetElementName(linia);
+
+                                        if (elementName == "FoodDelivered")
+                                        {
+
+                                            linia = sr.ReadLine();
+
+                                            deliveryNote_actual = GetElementData(linia);
+
+                                            linia = sr.ReadLine();
+
+                                            deliveryDate_actual = GetElementData(linia);
+
+                                            linia = sr.ReadLine();
+                                            linia = sr.ReadLine();
+
+                                            price_actual = GetElementData(linia);
+
+                                            if (cbHijo.Text == deliveryNote_actual)
+                                            {
+                                                tbResultat.AppendText(SEPARADOR + "\r\n");
+                                                sw.WriteLine(SEPARADOR);
+                                                tbResultat.AppendText("DELIVERY NOTE: " + deliveryNote_actual + "\r\n");
+                                                sw.WriteLine("DELIVERY NOTE: " + deliveryNote_actual);
+                                                tbResultat.AppendText("DELIVERY DATE: " + deliveryDate_actual + "\r\n");
+                                                sw.WriteLine("DELIVERY DATE: " + deliveryDate_actual);
+                                                tbResultat.AppendText("TOTAL COST: " + price_actual + "\r\n");
+                                                sw.WriteLine("TOTAL COST: " + price_actual);
+                                                tbResultat.AppendText(SEPARADOR + "\r\n");
+                                                sw.WriteLine(SEPARADOR);
+                                            }
+                                        }
+                                        if (linia == "</FoodsDelivered>")
+                                        {
+                                            foodsDelivered_okey = false;
+                                        }
+
+                                    }
+
+                                    break;
+                            }
+                            tbResultat.AppendText("END SEARCH" + "\r\n");
+                            sw.WriteLine("END SEARCH");
+                            tbResultat.AppendText(SEPARADOR2 + "\r\n");
+                            sw.WriteLine(SEPARADOR2);
+
+                            sr.Close();
+                            sw.Close();
+                        }
+                    }
+                }
+            } else
+            {
+                MessageBox.Show("Se tiene que seleccionar un archivo.");
+            }           
+        }
+
+        private void formularioMain_Load(object sender, EventArgs e)
+        {
+
+        }
+
+        private void label1_Click(object sender, EventArgs e)
+        {
+
+        }      
+
+        private void informesM04ToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+           
+        }
+
+        private void cbHijo_SelectedIndexChanged_1(object sender, EventArgs e)
+        {
+
+        }
+
+        private void btAgregar_Click(object sender, EventArgs e)
+        {
+            if (agregarActivat)
+            {
+                agregarActivat = false;
+                btAgregar.BackColor = Color.Gainsboro;
+            }
+            else
+            {
+                agregarActivat = true;
+                
+                btAgregar.BackColor = Color.GreenYellow;
+            }
+
+
+        }
+
+        private void label1_Click_1(object sender, EventArgs e)
+        {
+
+        }
+
+        private void informe1ToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            /*CrystalReport1 crystalReport1 = new CrystalReport1();
+
+            CrystalReport1.ReportSource = crystalReport1;*/
+            formulario_Informe1 informe1 = new formulario_Informe1();
+
+            informe1.Show();
+        }
+
+        private void informe2ToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            formulario_Informe2 informe2 = new formulario_Informe2();
+
+            informe2.Show();
+        }
+
+        private void informe3ToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            formulario_Informe3 informe3 = new formulario_Informe3();
+
+            informe3.Show();
+        }
+
+        private void tbResultat_TextChanged_1(object sender, EventArgs e)
         {
 
         }
