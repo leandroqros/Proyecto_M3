@@ -56,7 +56,8 @@ namespace Proyecto_M3
             this.Controls.Add(this.crystalReportViewer1);
             this.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.Name = "formulario_Informe1";
-            this.Text = "Form1";
+            this.Text = "Informe 1";
+            this.Load += new System.EventHandler(this.formulario_Informe1_Load);
             this.ResumeLayout(false);
 
         }

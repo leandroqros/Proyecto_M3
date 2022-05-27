@@ -16,5 +16,10 @@ namespace Proyecto_M3
         {
             InitializeComponent();
         }
+
+        private void formulario_Informe1_Load(object sender, EventArgs e)
+        {
+
+        }
     }
 }
